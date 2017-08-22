@@ -18,7 +18,7 @@
 
         <fluidoSkin>
             <topBarEnabled>true</topBarEnabled>
-            <topBarContainerStyle>width: 90%;</topBarContainerStyle>
+            <topBarContainerStyle>width: 70%;padding-top:200px;</topBarContainerStyle>
             <navBarStyle>navbar-inverse</navBarStyle>
             <topBarIcon>
                 <name>ParisJug</name>
@@ -26,7 +26,7 @@
                 <src>https://parisjug.org/xwiki/wiki/oldversion/download/Main/WebHome/Logo_full_BJPC_2015_01.png</src>
                 <href>/index.html</href>
             </topBarIcon>
-            <sideBarEnabled>false</sideBarEnabled>
+            <!--<sideBarEnabled>false</sideBarEnabled>-->
             <googleSearch>
                 <sitesearch/>
             </googleSearch>
@@ -40,9 +40,12 @@
                 <showUser>true</showUser>
                 <showFollowers>true</showFollowers>
             </twitter>
-            <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+            <!--<sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>-->
         </fluidoSkin>
     </custom>
+
+    <version position="none"/>
+    <publishDate position="none"/>
 
     <bannerLeft>
         <name>ParisJug</name>
@@ -55,10 +58,21 @@
     </bannerRight>
 
     <body>
+
         <menu name="Overview">
             <item name="Test" href="markup.html"/>
             <item name="Antonio" href="sample.html">
                 <item name="Sponsors" href="sponsors.html"/>
+                <item name="Speakers" href="speakers/speakers.html"/>
+            </item>
+
+        </menu>
+
+        <menu name="Overview2">
+            <item name="Test" href="markup.html"/>
+            <item name="Antonio" href="sample.html">
+                <item name="Sponsors" href="sponsors.html"/>
+                <item name="Speakers" href="speakers/speakers.html"/>
             </item>
 
         </menu>
@@ -73,6 +87,7 @@
             <item name="Sponsor" href="sponsors.html"/>
             <item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>
         </breadcrumbs>
+
 
     </body>
 
