@@ -1,0 +1,81 @@
+<project name="My Site Title"
+         xmlns="http://maven.apache.org/DECORATION/1.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0 http://maven.apache.org/xsd/decoration-1.7.0.xsd">
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.5</version>
+    </skin>
+
+    <!--<skin>-->
+        <!--<groupId>org.apache.maven.skins</groupId>-->
+        <!--<artifactId>maven-default-skin</artifactId>-->
+        <!--<version>1.2</version>-->
+    <!--</skin>-->
+
+    <custom>
+
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <topBarContainerStyle>width: 90%;</topBarContainerStyle>
+            <navBarStyle>navbar-inverse</navBarStyle>
+            <topBarIcon>
+                <name>ParisJug</name>
+                <alt>ParisJug</alt>
+                <src>https://parisjug.org/xwiki/wiki/oldversion/download/Main/WebHome/Logo_full_BJPC_2015_01.png</src>
+                <href>/index.html</href>
+            </topBarIcon>
+            <sideBarEnabled>false</sideBarEnabled>
+            <googleSearch>
+                <sitesearch/>
+            </googleSearch>
+            <!--<gitHub>-->
+                <!--<projectId>jetoile/hadoop-unit</projectId>-->
+                <!--<ribbonOrientation>right</ribbonOrientation>-->
+                <!--<ribbonColor>black</ribbonColor>-->
+            <!--</gitHub>-->
+            <twitter>
+                <user>parisjug</user>
+                <showUser>true</showUser>
+                <showFollowers>true</showFollowers>
+            </twitter>
+            <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+        </fluidoSkin>
+    </custom>
+
+    <bannerLeft>
+        <name>ParisJug</name>
+        <src>/images/by-nc-sa.png</src>
+        <href>https://www.parisjug.org</href>
+    </bannerLeft>
+
+    <bannerRight>
+        <src>https://parisjug.org/xwiki/wiki/oldversion/skin/XWiki/DefaultSkin/LogoBJCP_black_2015_0150x0060.png</src>
+    </bannerRight>
+
+    <body>
+        <menu name="Overview">
+            <item name="Test" href="markup.html"/>
+            <item name="Antonio" href="sample.html">
+                <item name="Sponsors" href="sponsors.html"/>
+            </item>
+
+        </menu>
+
+
+        <links>
+            <item name="ParisJug" href="https://www.parisjug.org"/>
+            <item name="Maven" href="http://maven.apache.org"/>
+        </links>
+
+        <breadcrumbs>
+            <item name="Sponsor" href="sponsors.html"/>
+            <item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>
+        </breadcrumbs>
+
+    </body>
+
+
+
+</project>
