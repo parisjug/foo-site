@@ -16,54 +16,58 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <lombok.version>1.16.6</lombok.version>
-
-
-        <version.asciidoctor.maven.plugin>1.5.5</version.asciidoctor.maven.plugin>
-        <version.asciidoctorj.diagram>1.5.4.1</version.asciidoctorj.diagram>
-        <version.gem.maven.plugin>1.1.5</version.gem.maven.plugin>
-        <version.jruby>9.1.8.0</version.jruby>
+        <jackson.version>2.9.0</jackson.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <freemarker.version>2.3.23</freemarker.version>
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <logback-classic.version>1.1.7</logback-classic.version>
+        <jansi.version>1.11</jansi.version>
+        <assertj-core.version>3.8.0</assertj-core.version>
+        <junit.version>4.12</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
-            <version>2.9.0</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.0</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.4</version>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-            <version>2.3.23</version>
+            <version>${freemarker.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.7</version>
+            <version>${logback-classic.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.fusesource.jansi</groupId>
             <artifactId>jansi</artifactId>
-            <version>1.11</version>
+            <version>${jansi.version}</version>
         </dependency>
 
 
@@ -77,14 +81,14 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.8.0</version>
+            <version>${assertj-core.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
         </dependency>
 
     </dependencies>
