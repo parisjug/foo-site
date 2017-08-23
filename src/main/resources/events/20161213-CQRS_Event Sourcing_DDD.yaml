@@ -1,0 +1,10 @@
+title: "Functional Event Sourcing: une approche simple et directe"
+date: 2016/12/13
+#flickUrl: https://www.flickr.com/slideShow/index.gne?user_id=131930460@N04&set_id=72157676603118070
+description: |
+  CQRS / Event Sourcing / DDD
+talks:
+  - 20161213-CQRS_Event_Sourcing_DDD-1
+  - 20161213-CQRS_Event_Sourcing_DDD-2
+
+eventbrite: 29844835707
