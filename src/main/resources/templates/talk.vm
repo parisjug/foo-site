@@ -1,0 +1,14 @@
+# Talk
+
+## ${talk.title}
+
+${talk.date}
+
+${talk.description!}
+
+par :
+
+<#list talk.speakersObject as speaker>
+* [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl})
+</#list>
+

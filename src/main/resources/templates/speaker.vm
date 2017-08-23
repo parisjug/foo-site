@@ -1,0 +1,23 @@
+# Speaker
+
+## ${speaker.firstName} ${speaker.lastName}
+
+<#if speaker.photo??>
+![test](${speaker.photo?replace("&", "&amp;")})
+</#if>
+
+${speaker.description!}
+
+<#if speaker.tweet??>
+Twitter: [@${speaker.tweet!}](http://twitter.com/${speaker.tweet!})
+</#if>
+
+<#if speaker.url??>
+Url: [@${speaker.url?replace("&", "&amp;")}](${speaker.url?replace("&", "&amp;")})
+</#if>
+
+Talks:
+
+<#list speaker.talksObject as talk>
+* [${talk.title}](${talk.internalUrl})
+</#list>

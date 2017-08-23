@@ -60,22 +60,28 @@
     <body>
 
         <menu name="Overview">
+            <item name="Soirees" href="events/events.html"/>
+            <item name="Speakers" href="speakers/speakers.html"/>
+            <item name="Talks" href="talks/talks.html"/>
+            <item name="Sponsors" href="sponsors.html"/>
             <item name="Test" href="markup.html"/>
             <item name="Antonio" href="sample.html">
-                <item name="Sponsors" href="sponsors.html"/>
                 <item name="Speakers" href="speakers/speakers.html"/>
+                <item name="Soirees" href="events/events.html"/>
+                <item name="Talks" href="talks/talks.html"/>
+                <item name="Sponsors" href="sponsors.html"/>
             </item>
 
         </menu>
 
-        <menu name="Overview2">
-            <item name="Test" href="markup.html"/>
-            <item name="Antonio" href="sample.html">
-                <item name="Sponsors" href="sponsors.html"/>
-                <item name="Speakers" href="speakers/speakers.html"/>
-            </item>
+        <!--<menu name="Overview2">-->
+            <!--<item name="Test" href="markup.html"/>-->
+            <!--<item name="Antonio" href="sample.html">-->
+                <!--<item name="Sponsors" href="sponsors.html"/>-->
+                <!--<item name="Speakers" href="speakers/speakers.html"/>-->
+            <!--</item>-->
 
-        </menu>
+        <!--</menu>-->
 
 
         <links>
@@ -84,10 +90,15 @@
         </links>
 
         <breadcrumbs>
-            <item name="Sponsor" href="sponsors.html"/>
-            <item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>
+            <!--<item name="Sponsor" href="sponsors.html"/>-->
+            <!--<item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>-->
+            <item name="Soirees" href="events/events.html"/>
+            <item name="Speakers" href="speakers/speakers.html"/>
+            <item name="Talks" href="talks/talks.html"/>
+            <item name="Sponsors" href="sponsors.html"/>
         </breadcrumbs>
 
+        <footer href="speakers/speakers.html">speakers/speakers.html</footer>
 
     </body>
 

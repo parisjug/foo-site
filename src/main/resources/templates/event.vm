@@ -1,0 +1,27 @@
+# Event
+
+## ${event.date} - ${event.title}
+
+${event.description!}
+
+<#if event.flickUrl??>
+## Photos
+<div class="iframe_container">
+<iframe align='center' src='${event.flickUrl?replace("&", "&amp;")}' frameBorder='0' width='500' scrolling='no' height='500'></iframe>
+</div>
+</#if>
+
+## Détails
+
+### 19h15 à 19h30 : Accueil
+
+<#list event.talksObject as talk>
+### ${talk.startTime!} - ${talk.endTime!} : ${talk.title}
+
+${talk.description}
+
+par :
+<#list talk.speakersObject as speaker>
+* [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl}))
+</#list>
+</#list>
