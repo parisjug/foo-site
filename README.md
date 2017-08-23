@@ -8,10 +8,8 @@ A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-
 
 # Build
 
-Lancer le Main puis lancer le build
-
 ```bash
-mvn package site
+mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Main" site
 ```
 
 # Besoins Model
