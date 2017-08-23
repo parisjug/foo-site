@@ -18,3 +18,13 @@
 
 
 ![test](images/by-nc-sa.png)
+
+
+<<[speakers/speakers.md]
+
+#include "speakers/speakers.md"
+
+!INCLUDE "speakers/speakers.md"
+
+
+{{md  speakers/speakers.md }}

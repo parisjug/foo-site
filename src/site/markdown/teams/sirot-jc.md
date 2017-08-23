@@ -1,4 +1,4 @@
-# Speaker
+# Team Member
 
 ## Jean-Christophe Sirot
 
@@ -10,7 +10,3 @@ Ingénieur logiciel, développeur java et membre de l'équipe du Paris JUG. Pass
 Twitter: [@jcsirot](http://twitter.com/jcsirot)
 
 Url: [@https://parisjug.org](https://parisjug.org)
-
-Talks:
-
-* [Java and docker, what’s up?](../talks/20170613-docker.html)

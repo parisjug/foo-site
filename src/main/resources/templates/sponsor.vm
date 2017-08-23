@@ -1,0 +1,21 @@
+# Sponsor
+
+## ${sponsor.name}
+
+<#if sponsor.logo??>
+![${sponsor.logo?replace("&", "&amp;")}](${sponsor.logo?replace("&", "&amp;")})
+</#if>
+
+${sponsor.description!}
+
+<#if sponsor.tweet??>
+Twitter: [@${sponsor.tweet!}](http://twitter.com/${sponsor.tweet!})
+</#if>
+
+<#if sponsor.url??>
+Url: [${sponsor.url?replace("&", "&amp;")}](${sponsor.url?replace("&", "&amp;")})
+</#if>
+
+<#if sponsor.type??>
+Type: ${sponsor.type}
+</#if>

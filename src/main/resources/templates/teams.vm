@@ -1,0 +1,22 @@
+# Team
+
+<#list teams as team>
+
+## ${team.firstName} ${team.lastName}
+
+<#if team.photo??>
+![test](${team.photo?replace("&", "&amp;")})
+</#if>
+
+${team.description!}
+
+<#if team.tweet??>
+Twitter: [@${team.tweet!}](http://twitter.com/${team.tweet!})
+</#if>
+
+<#if team.url??>
+Url: [@${team.url?replace("&", "&amp;")}](${team.url?replace("&", "&amp;")})
+</#if>
+
+
+</#list>

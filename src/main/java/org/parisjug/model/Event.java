@@ -14,6 +14,7 @@ public class Event implements Comparable<Event> {
     private List<String> talks;
     private List<Talk> talksObject;
     private String internalUrl;
+    private String eventbrite;
 
 
     @Override

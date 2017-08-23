@@ -1,4 +1,4 @@
-# Speaker
+# Team Member
 
 ## Charles Sabourdin
 
@@ -12,7 +12,3 @@ Investie depuis longtemps dans l’informatique, Linuxiens, Javaiste et viscéra
 Twitter: [@kanedafromparis](http://twitter.com/kanedafromparis)
 
 Url: [@https://parisjug.org](https://parisjug.org)
-
-Talks:
-
-* [Java is going nuts | native](../talks/20170214-jigsaw.html)

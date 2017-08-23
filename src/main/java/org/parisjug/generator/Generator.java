@@ -4,9 +4,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import lombok.extern.slf4j.Slf4j;
-import org.parisjug.model.Event;
-import org.parisjug.model.Speaker;
-import org.parisjug.model.Talk;
+import org.parisjug.model.*;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -123,6 +121,70 @@ public class Generator {
             generateMd(dest, root, "talks.vm");
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
+        }
+    }
+
+
+    public void generateTeamMd(String name) {
+        Path dest = Paths.get("src/site/markdown/teams/" + name + ".md");
+        generateTeamMd(dest, name);
+    }
+
+    void generateTeamMd(Path dest, String name) {
+        log.debug("generating md file {} from {}", dest, name);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("team", yamlReader.readTeamMember(name).get());
+
+            generateMd(dest, root, "team.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file {} for {}", dest, name, e);
+        }
+    }
+
+    public void generateTeamsMd(Path dest, List<TeamMember> talks) {
+        log.debug("generating md file {} for teams", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("teams", talks);
+
+            generateMd(dest, root, "teams.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file for teams", dest, e);
+        }
+    }
+
+
+    public void generateSponsorMd(String name) {
+        Path dest = Paths.get("src/site/markdown/sponsors/" + name + ".md");
+        generateSponsorMd(dest, name);
+    }
+
+    void generateSponsorMd(Path dest, String name) {
+        log.debug("generating md file {} from {}", dest, name);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("sponsor", yamlReader.readSponsor(name).get());
+
+            generateMd(dest, root, "sponsor.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file {} for {}", dest, name, e);
+        }
+    }
+
+    public void generateSponsorsMd(Path dest, List<Sponsor> sponsors) {
+        log.debug("generating md file {} for teams", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("sponsors", sponsors);
+
+            generateMd(dest, root, "sponsors.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file for sponsors", dest, e);
         }
     }
 

@@ -1,9 +1,7 @@
 package org.parisjug.generator;
 
 import org.junit.Test;
-import org.parisjug.model.Event;
-import org.parisjug.model.Speaker;
-import org.parisjug.model.Talk;
+import org.parisjug.model.*;
 
 import java.net.URISyntaxException;
 import java.util.Optional;
@@ -70,5 +68,28 @@ public class ReaderTest {
         Optional<Talk> talk = reader.readTalk("none");
 
         assertThat(talk).isEmpty();
+    }
+
+    @Test
+    public void read_existing_sponsor_should_success() throws URISyntaxException {
+        Optional<Sponsor> sponsor = reader.readSponsor("arolla");
+
+        assertThat(sponsor).isNotEmpty();
+        assertThat(sponsor.get().getDescription()).isEqualTo("Arolla est une société de conseil spécialisée dans les techniques les plus avancées de développement logiciel : Clean Code, TDD, BDD, Legacy Remediation, DDD, style de Programmation Fonctionnelle et Continuous Delivery. Autour des écosystèmes Java et .Net, avec des incursions en Scala ou F#, notre expertise en qualité de code n’est plus à démontrer et se traduit pour nos clients par du code plus économique à maintenir et à évoluer dans la durée.\n" +
+                "Pour nous, le succès ne se conçoit que dans la durée. Nous réalisons des prestations de conseil et de réalisation autour des technologies présentes et à venir, dans une démarche respectueuse de nos clients et de nos salariés, ainsi que de l’environnement\n" +
+                ""
+        );
+        assertThat(sponsor.get().getType()).isEqualTo(SponsorType.PLATINE);
+
+        sponsor = reader.readSponsor("ippon");
+        assertThat(sponsor.get().getType()).isEqualTo(SponsorType.GOLD);
+
+    }
+
+    @Test
+    public void read_non_existing_sponsor_should_success() throws URISyntaxException {
+        Optional<Sponsor> sponsor = reader.readSponsor("none");
+
+        assertThat(sponsor).isEmpty();
     }
 }

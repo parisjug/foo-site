@@ -4,6 +4,12 @@
 
 ${event.description!}
 
+<#if event.eventbrite??>
+<div class="iframe_container">
+<iframe  src='${event.eventbrite?replace("&", "&amp;")}' frameborder='0' height='450' width='100%' vspace='0' hspace='0' marginheight='5' marginwidth='5' scrolling='auto' allowtransparency='true'></iframe>
+</div>
+</#if>
+
 <#if event.flickUrl??>
 ## Photos
 <div class="iframe_container">
@@ -25,3 +31,4 @@ par :
 * [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl}))
 </#list>
 </#list>
+

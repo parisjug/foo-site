@@ -3,9 +3,7 @@ package org.parisjug.generator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import lombok.extern.slf4j.Slf4j;
-import org.parisjug.model.Event;
-import org.parisjug.model.Speaker;
-import org.parisjug.model.Talk;
+import org.parisjug.model.*;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -100,4 +98,33 @@ public class YamlReader {
             return Optional.empty();
         }
     }
+
+    public Optional<TeamMember> readTeamMember(String name) {
+        try {
+            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("teams/" + name + ".yaml").toURI());
+            TeamMember team = mapper.readValue(path.toFile(), TeamMember.class);
+
+            team.setInternalUrl("../teams/" + name + ".html");
+
+            return Optional.ofNullable(team);
+        } catch (Exception e) {
+            log.error("unable to read {}", name, e);
+            return Optional.empty();
+        }
+    }
+
+    public Optional<Sponsor> readSponsor(String name) {
+        try {
+            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("sponsors/" + name + ".yaml").toURI());
+            Sponsor sponsor = mapper.readValue(path.toFile(), Sponsor.class);
+
+            sponsor.setInternalUrl("../sponsors/" + name + ".html");
+
+            return Optional.ofNullable(sponsor);
+        } catch (Exception e) {
+            log.error("unable to read {}", name, e);
+            return Optional.empty();
+        }
+    }
+
 }

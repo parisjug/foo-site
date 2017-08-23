@@ -63,7 +63,9 @@
             <item name="Soirees" href="events/events.html"/>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
-            <item name="Sponsors" href="sponsors.html"/>
+            <item name="Sponsors" href="sponsors/sponsors.html"/>
+            <item name="Team" href="teams/teams.html"/>
+            <item name="Qu'est ce que c'est le ParisJUG" href="apropos.html"/>
             <item name="Test" href="markup.html"/>
             <item name="Antonio" href="sample.html">
                 <item name="Speakers" href="speakers/speakers.html"/>
@@ -95,7 +97,9 @@
             <item name="Soirees" href="events/events.html"/>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
-            <item name="Sponsors" href="sponsors.html"/>
+            <item name="Sponsors" href="sponsors/sponsors.html"/>
+            <item name="Team" href="teams/teams.html"/>
+            <item name="Qu'est ce que c'est le ParisJUG" href="apropos.html"/>
         </breadcrumbs>
 
         <footer href="speakers/speakers.html">speakers/speakers.html</footer>

@@ -1,32 +1,6 @@
 # Events
 
 
-## 2017/06/13 - Docker et java 9
-
-blabla
-
-## Photos
-<div class="iframe_container">
-    <iframe align='center' src='https://www.flickr.com/slideShow/index.gne?user_id=131930460@N04&amp;set_id=72157685168154095' frameBorder='0' width='500' scrolling='no' height='500'></iframe>
-</div>
-
-## Détails
-
-### 19h15 à 19h30 : Accueil
-
-### 19h30 - 20h30 : Java and docker, what’s up?
-
-Pourquoi quand vous demandez a mettre en production java dans docker, on vous fait la grimace ?
-Pourquoi vos "container" crashent si souvent et pourquoi les nodes swapent-ils tant ?
-Partageons ensemble nos découvertes et réflexions sur java dans docker.
-
-
-par :
-
-* [Jean-Christophe Sirot](../speakers/sabourdin-charles.html)
-* [Charles Sabourdin](../speakers/sirot-jc.html)
-
-
 ## 2017/02/14 - Soirée Java is going nut's (JDK 9 - jigsaw)
 
 
@@ -50,4 +24,30 @@ Bon alors c'est quoi jigsaw, je commencerai par rappeler pourquoi Java a besoin 
 par :
 
 * [Remi Forax](../speakers/forax-remi.html)
+
+
+## 2017/06/13 - Docker et java 9
+
+blabla
+
+## Photos
+<div class="iframe_container">
+    <iframe align='center' src='https://www.flickr.com/slideShow/index.gne?user_id=131930460@N04&amp;set_id=72157685168154095' frameBorder='0' width='500' scrolling='no' height='500'></iframe>
+</div>
+
+## Détails
+
+### 19h15 à 19h30 : Accueil
+
+### 19h30 - 20h30 : Java and docker, what’s up?
+
+Pourquoi quand vous demandez a mettre en production java dans docker, on vous fait la grimace ?
+Pourquoi vos "container" crashent si souvent et pourquoi les nodes swapent-ils tant ?
+Partageons ensemble nos découvertes et réflexions sur java dans docker.
+
+
+par :
+
+* [Charles Sabourdin](../speakers/sabourdin-charles.html)
+* [Jean-Christophe Sirot](../speakers/sirot-jc.html)
 

@@ -24,8 +24,8 @@ Partageons ensemble nos découvertes et réflexions sur java dans docker.
 
 par :
 
-* [Jean-Christophe Sirot](../speakers/sabourdin-charles.html)
-* [Charles Sabourdin](../speakers/sirot-jc.html)
+* [Charles Sabourdin](../speakers/sabourdin-charles.html)
+* [Jean-Christophe Sirot](../speakers/sirot-jc.html)
 
 
 ## Java is going nuts | native

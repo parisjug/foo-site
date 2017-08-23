@@ -2,9 +2,7 @@ package org.parisjug;
 
 import org.parisjug.generator.Generator;
 import org.parisjug.generator.YamlReader;
-import org.parisjug.model.Event;
-import org.parisjug.model.Speaker;
-import org.parisjug.model.Talk;
+import org.parisjug.model.*;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -23,6 +21,8 @@ public class Main {
         generateEvents(generator, reader);
         generateSpeakers(generator, reader);
         generateTalks(generator, reader);
+        generateTeam(generator, reader);
+        generateSponsors(generator, reader);
     }
 
     private static void generateEvents(Generator generator, YamlReader reader) throws URISyntaxException, IOException {
@@ -37,6 +37,7 @@ public class Main {
                 .map(t -> reader.readEvent(t))
                 .filter(t -> t.isPresent())
                 .map(t -> t.get())
+                .sorted()
                 .collect(toList());
 
         generator.generateEventsMd(eventsOutput, events);
@@ -58,6 +59,7 @@ public class Main {
                 .map(t -> reader.readSpeaker(t))
                 .filter(t -> t.isPresent())
                 .map(t -> t.get())
+                .sorted()
                 .collect(toList());
 
         generator.generateSpeakersMd(speakersOutput, speakers);
@@ -79,6 +81,7 @@ public class Main {
                 .map(t -> reader.readTalk(t))
                 .filter(t -> t.isPresent())
                 .map(t -> t.get())
+                .sorted()
                 .collect(toList());
 
         generator.generateTalksMd(talksOutput, talks);
@@ -86,5 +89,49 @@ public class Main {
         Files.list(talksPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
                 .forEach(e -> generator.generateTalkMd(e));
+    }
+
+    private static void generateTeam(Generator generator, YamlReader reader) throws URISyntaxException, IOException {
+        Path talksPath = Paths.get(Main.class.getClassLoader().getResource("teams").toURI());
+
+        Paths.get("src/site/markdown/teams").toFile().mkdirs();
+
+        Path teamMembersOuput = Paths.get("src/site/markdown/teams/teams.md");
+
+        List<TeamMember> teamMembers = Files.list(talksPath)
+                .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
+                .map(t -> reader.readTeamMember(t))
+                .filter(t -> t.isPresent())
+                .map(t -> t.get())
+                .sorted()
+                .collect(toList());
+
+        generator.generateTeamsMd(teamMembersOuput, teamMembers);
+
+        Files.list(talksPath)
+                .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
+                .forEach(e -> generator.generateTeamMd(e));
+    }
+
+    private static void generateSponsors(Generator generator, YamlReader reader) throws URISyntaxException, IOException {
+        Path talksPath = Paths.get(Main.class.getClassLoader().getResource("sponsors").toURI());
+
+        Paths.get("src/site/markdown/sponsors").toFile().mkdirs();
+
+        Path teamMembersOuput = Paths.get("src/site/markdown/sponsors/sponsors.md");
+
+        List<Sponsor> sponsors = Files.list(talksPath)
+                .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
+                .map(t -> reader.readSponsor(t))
+                .filter(t -> t.isPresent())
+                .map(t -> t.get())
+                .sorted()
+                .collect(toList());
+
+        generator.generateSponsorsMd(teamMembersOuput, sponsors);
+
+        Files.list(talksPath)
+                .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
+                .forEach(e -> generator.generateSponsorMd(e));
     }
 }

@@ -1,35 +1,4 @@
-# Speakers
-
-
-## Jean Michel Doudoux
-
-![test](https://parisjug.org/xwiki/wiki/oldversion/download/Speaker/DoudouxJeanMichel/jmdouxdoux.jpg)
-
-FROM OXIANE LUXEMBOURG Passionné par le développement de logiciels et par la veille technologique, je possède une longue expérience, en SSII et personnelle, dans l'écriture d'applications avec différents langages. Utilisant Java depuis sa version 1.0, j'aime partager ma passion pour cette plateforme et son écosystème notamment en me consacrant, depuis plus d'une quinzaine d'années, à la rédaction de deux tutoriels, intitulés "Développons en Java", diffusés sous licence GNU FDL. Ce travail m'a permis d'être nommé Java Champion. Je suis également un des cofondateurs du Lorraine JUG.
-
-
-
-Url: [@http://www.jmdoudoux.fr](http://www.jmdoudoux.fr)
-
-Talks:
-
-* [Java 9 modulo les modules](../talks/20170613-java9.html)
-
-
-## Remi Forax
-
-![test](https://avatars0.githubusercontent.com/u/828220?v=4&amp;s=400)
-
-Maitre de conférence à l'université Paris Est - Marne la Vallée,
-Expert pour les JSRs 292 et 335.
-Tombé dans le Java quand il était petit.
-
-
-
-
-Talks:
-
-* [Java is going nuts | native](../talks/20170214-jigsaw.html)
+# Team
 
 
 ## Charles Sabourdin
@@ -45,9 +14,6 @@ Twitter: [@kanedafromparis](http://twitter.com/kanedafromparis)
 
 Url: [@https://parisjug.org](https://parisjug.org)
 
-Talks:
-
-* [Java is going nuts | native](../talks/20170214-jigsaw.html)
 
 
 ## Jean-Christophe Sirot
@@ -61,7 +27,4 @@ Twitter: [@jcsirot](http://twitter.com/jcsirot)
 
 Url: [@https://parisjug.org](https://parisjug.org)
 
-Talks:
-
-* [Java and docker, what’s up?](../talks/20170613-docker.html)
 
