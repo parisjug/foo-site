@@ -62,7 +62,7 @@
         <menu name="Overview">
             <item name="Soirees" href="events/events.html">
                 <item name="Prochaines rencontres" href="events/next_events.html"/>
-                <item name="Rencontres précédentes" href="events/old_events.html"/>
+                <item name="Rencontres précédentes" href="events/previous_events.html"/>
             </item>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>

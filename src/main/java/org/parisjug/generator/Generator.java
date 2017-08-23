@@ -194,7 +194,7 @@ public class Generator {
         }
     }
 
-    public void generateOldEventsMd(Path dest, List<Event> events) {
+    public void generatePreviousEventsMd(Path dest, List<Event> events) {
         log.debug("generating md file {} for events", dest);
 
         try {
@@ -202,7 +202,7 @@ public class Generator {
             List<Event> collect = events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isBefore(LocalDate.now())).collect(toList());
             root.put("events", collect);
 
-            generateMd(dest, root, "old_events.vm");
+            generateMd(dest, root, "previous_events.vm");
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
         }
