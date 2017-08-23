@@ -13,15 +13,21 @@ import java.io.Writer;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 @Slf4j
 public class Generator {
 
     final private Configuration cfg;
     final private YamlReader yamlReader;
+    final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public Generator() {
         cfg = new Configuration(Configuration.VERSION_2_3_23);
@@ -187,6 +193,34 @@ public class Generator {
             log.error("unable to generate md file for sponsors", dest, e);
         }
     }
+
+    public void generateOldEventsMd(Path dest, List<Event> events) {
+        log.debug("generating md file {} for events", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            List<Event> collect = events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isBefore(LocalDate.now())).collect(toList());
+            root.put("events", collect);
+
+            generateMd(dest, root, "old_events.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file for events", dest, e);
+        }
+    }
+
+    public void generateNextEventsMd(Path dest, List<Event> events) {
+        log.debug("generating md file {} for events", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("events", events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isAfter(LocalDate.now())).collect(toList()));
+
+            generateMd(dest, root, "next_events.vm");
+        } catch (Exception e) {
+            log.error("unable to generate md file for events", dest, e);
+        }
+    }
+
 
     private void generateMd(Path dest, Map<String, Object> map, String template) throws IOException, URISyntaxException, TemplateException {
         Writer out = new OutputStreamWriter(new FileOutputStream(dest.toFile()));

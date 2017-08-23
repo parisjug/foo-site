@@ -60,19 +60,16 @@
     <body>
 
         <menu name="Overview">
-            <item name="Soirees" href="events/events.html"/>
+            <item name="Soirees" href="events/events.html">
+                <item name="Prochaines rencontres" href="events/next_events.html"/>
+                <item name="Rencontres précédentes" href="events/old_events.html"/>
+            </item>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
             <item name="Sponsors" href="sponsors/sponsors.html"/>
             <item name="Team" href="teams/teams.html"/>
             <item name="Qu'est ce que c'est le ParisJUG" href="apropos.html"/>
             <item name="Test" href="markup.html"/>
-            <item name="Antonio" href="sample.html">
-                <item name="Speakers" href="speakers/speakers.html"/>
-                <item name="Soirees" href="events/events.html"/>
-                <item name="Talks" href="talks/talks.html"/>
-                <item name="Sponsors" href="sponsors.html"/>
-            </item>
 
         </menu>
 
@@ -92,14 +89,11 @@
         </links>
 
         <breadcrumbs>
-            <!--<item name="Sponsor" href="sponsors.html"/>-->
-            <!--<item name="Trunk" href="http://maven.apache.org/doxia/doxia/index.html"/>-->
             <item name="Soirees" href="events/events.html"/>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
             <item name="Sponsors" href="sponsors/sponsors.html"/>
             <item name="Team" href="teams/teams.html"/>
-            <item name="Qu'est ce que c'est le ParisJUG" href="apropos.html"/>
         </breadcrumbs>
 
         <footer href="speakers/speakers.html">speakers/speakers.html</footer>

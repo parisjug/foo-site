@@ -51,3 +51,23 @@ par :
 * [Charles Sabourdin](../speakers/sabourdin-charles.html)
 * [Jean-Christophe Sirot](../speakers/sirot-jc.html)
 
+
+## 2017/09/12 - javaEE
+
+javaEE c'est cool!
+
+
+
+## Détails
+
+### 19h15 à 19h30 : Accueil
+
+### 19h30 - 20h30 : JavaEE talk 1
+
+talk1
+
+
+par :
+
+* [Adam Bien](../speakers/bien-adam.html)
+

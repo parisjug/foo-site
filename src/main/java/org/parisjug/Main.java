@@ -31,6 +31,8 @@ public class Main {
         Paths.get("src/site/markdown/events").toFile().mkdirs();
 
         Path eventsOutput = Paths.get("src/site/markdown/events/events.md");
+        Path oldEventsOutput = Paths.get("src/site/markdown/events/old_events.md");
+        Path nextEventsOutput = Paths.get("src/site/markdown/events/next_events.md");
 
         List<Event> events = Files.list(eventsPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
@@ -41,6 +43,8 @@ public class Main {
                 .collect(toList());
 
         generator.generateEventsMd(eventsOutput, events);
+        generator.generateOldEventsMd(oldEventsOutput, events);
+        generator.generateNextEventsMd(nextEventsOutput, events);
 
         Files.list(eventsPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))

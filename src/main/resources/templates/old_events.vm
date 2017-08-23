@@ -1,0 +1,11 @@
+# Rencontres précédentes
+
+<#list events as event>
+
+## ${event.date} - [${event.title}](${event.internalUrl})
+
+<#list event.talksObject as talk>
+* [${talk.title}](${talk.internalUrl})
+</#list>
+
+</#list>
