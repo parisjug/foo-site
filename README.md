@@ -8,3 +8,7 @@ A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-
 ```bash
 mvn package site
 ```
+
+# Idee
+
+Faire un combo avec du templating pour générer une page avec ts les speakers/soirée en fonction d'une nomenclature à faire sur la structure projet
