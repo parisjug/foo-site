@@ -20,6 +20,7 @@ mvn package site
 * [list<url>]
 * [description]
 * [list<talks>]
+* [photo]
 
 ## Infos Talks
 
@@ -61,6 +62,8 @@ Afin d'éviter la duplication d'infos, vu ques les infos se recoupent et qu'on e
 Du coup, faire un combo avec du templating pour générer une page avec ts les speakers/soirée en fonction d'une nomenclature à faire sur la structure projet.
 
 Eventuellement cela peut être fait avec du json.
+
+A noter qu'il peut être plus simple d'avoir une seule soirée/talk/speaker par type de fichiers afin de permettre le linkage direct sans avoir à ouvrir un fichier énorme... En outre, ca permettra au speaker de se retrouver plus facilement.
 
 ## Automatisation
 
