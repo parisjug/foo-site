@@ -3,6 +3,7 @@ package org.parisjug.model;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -12,8 +13,8 @@ public class Talk implements Comparable<Talk> {
     private String description;
     private String startTime;
     private String endTime;
-    private List<String> speakers;
-    private List<Speaker> speakersObject;
+    private List<String> speakers = new ArrayList<>();
+    private List<Speaker> speakersObject = new ArrayList<>();
     private String internalUrl;
 
     @Override

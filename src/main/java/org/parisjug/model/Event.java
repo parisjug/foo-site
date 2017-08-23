@@ -2,6 +2,7 @@ package org.parisjug.model;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -11,8 +12,8 @@ public class Event implements Comparable<Event> {
     private String date;
     private String description;
     private String flickUrl;
-    private List<String> talks;
-    private List<Talk> talksObject;
+    private List<String> talks = new ArrayList<>();
+    private List<Talk> talksObject = new ArrayList<>();
     private String internalUrl;
     private String eventbrite;
     private String startTime; //debut de l'event
