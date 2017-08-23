@@ -1,5 +1,7 @@
 package org.parisjug.generator;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.parisjug.model.Event;
 import org.parisjug.model.Speaker;
@@ -22,6 +24,7 @@ public class GeneratorTest {
     private Path dest;
     private Generator generator;
 
+    @Before
     public void setup() throws IOException {
         generator = new Generator();
 
@@ -29,6 +32,7 @@ public class GeneratorTest {
 //      dest = Paths.get("/tmp/toto.md");
     }
 
+    @After
     public void tearDown() {
         dest.toFile().deleteOnExit();
     }
