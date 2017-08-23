@@ -8,6 +8,9 @@ import org.parisjug.model.*;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,6 +18,7 @@ import java.util.stream.Collectors;
 @Slf4j
 public class YamlReader {
     private static ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public Optional<Speaker> readSpeaker(String name) {
         return readSpeaker(name, true);
@@ -40,7 +44,7 @@ public class YamlReader {
 
                 speaker.setTalksObject((List<Talk>) talks);
             }
-            speaker.setInternalUrl("../speakers/" + name + ".html");
+            speaker.setInternalUrl("/speakers/" + name + ".html");
 
             return Optional.ofNullable(speaker);
         } catch (Exception e) {
@@ -69,11 +73,14 @@ public class YamlReader {
                         .map(t -> readTalk(t))
                         .filter(t -> t.isPresent())
                         .map(t -> t.get())
+                        .sorted(Comparator.comparing((Talk p) -> p.getDate()).thenComparing(p -> p.getStartTime()))
                         .collect(Collectors.toList());
 
                 event.setTalksObject((List<Talk>) talks);
             }
-            event.setInternalUrl("../events/" + name + ".html");
+            LocalDate date = LocalDate.parse(event.getDate(), formatter);
+
+            event.setInternalUrl("/events/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(event);
         } catch (Exception e) {
@@ -107,7 +114,9 @@ public class YamlReader {
 
                 talk.setSpeakersObject((List<Speaker>) talks);
             }
-            talk.setInternalUrl("../talks/" + name + ".html");
+            LocalDate date = LocalDate.parse(talk.getDate(), formatter);
+
+            talk.setInternalUrl("/talks/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(talk);
         } catch (Exception e) {
@@ -126,7 +135,7 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             TeamMember team = mapper.readValue(path.toFile(), TeamMember.class);
 
-            team.setInternalUrl("../teams/" + name + ".html");
+            team.setInternalUrl("/teams/" + name + ".html");
 
             return Optional.ofNullable(team);
         } catch (Exception e) {
@@ -145,7 +154,7 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             Sponsor sponsor = mapper.readValue(path.toFile(), Sponsor.class);
 
-            sponsor.setInternalUrl("../sponsors/" + name + ".html");
+            sponsor.setInternalUrl("/sponsors/" + name + ".html");
 
             return Optional.ofNullable(sponsor);
         } catch (Exception e) {

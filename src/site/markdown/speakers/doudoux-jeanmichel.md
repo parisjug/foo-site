@@ -12,4 +12,4 @@ Url: [@http://www.jmdoudoux.fr](http://www.jmdoudoux.fr)
 
 Talks:
 
-* [Java 9 modulo les modules](../talks/20170613-java9.html)
+* [Java 9 modulo les modules](/talks/2017/20170613-java9.html)

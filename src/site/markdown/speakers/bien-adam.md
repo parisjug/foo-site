@@ -11,4 +11,4 @@ Consultant and author Adam Bien is an Expert Group member for the Java EE 6, EJB
 
 Talks:
 
-* [JavaEE talk 1](../talks/20170912-javaEE-1.html)
+* [JavaEE talk 1](/talks/2017/20170912-javaEE-1.html)

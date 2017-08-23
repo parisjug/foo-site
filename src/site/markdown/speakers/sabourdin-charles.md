@@ -15,4 +15,4 @@ Url: [@https://parisjug.org](https://parisjug.org)
 
 Talks:
 
-* [Java is going nuts | native](../talks/20170214-jigsaw.html)
+* [Java is going nuts | native](/talks/2017/20170214-jigsaw.html)

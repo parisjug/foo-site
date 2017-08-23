@@ -69,20 +69,26 @@ public class Generator {
     }
 
     public void generateEventMd(String name) {
-        Path dest = Paths.get("src/site/markdown/events/" + name + ".md");
-        generateEventMd(dest, name);
+        Event event = yamlReader.readEvent(name).get();
+        LocalDate date = LocalDate.parse(event.getDate(), formatter);
+
+        Paths.get("src/site/markdown/events/" + date.getYear()).toFile().mkdirs();
+
+        Path dest = Paths.get("src/site/markdown/events/" + date.getYear() + "/" + name + ".md");
+
+        generateEventMd(dest, event);
     }
 
-    void generateEventMd(Path dest, String name) {
-        log.debug("generating md file {} from {}", dest, name);
+    void generateEventMd(Path dest, Event event) {
+        log.debug("generating md file {} from {}", dest, event.getTitle());
 
         try {
             Map<String, Object> root = new HashMap<>();
-            root.put("event", yamlReader.readEvent(name).get());
+            root.put("event", event);
 
             generateMd(dest, root, "event.vm");
         } catch (Exception e) {
-            log.error("unable to generate md file {} for {}", dest, name, e);
+            log.error("unable to generate md file {} for {}", dest, event.getTitle(), e);
         }
     }
 
@@ -100,20 +106,26 @@ public class Generator {
     }
 
     public void generateTalkMd(String name) {
-        Path dest = Paths.get("src/site/markdown/talks/" + name + ".md");
-        generateTalkMd(dest, name);
+        Talk talk = yamlReader.readTalk(name).get();
+        LocalDate date = LocalDate.parse(talk.getDate(), formatter);
+
+        Paths.get("src/site/markdown/talks/" + date.getYear()).toFile().mkdirs();
+
+        Path dest = Paths.get("src/site/markdown/talks/" + date.getYear() + "/" + name + ".md");
+
+        generateTalkMd(dest, talk);
     }
 
-    void generateTalkMd(Path dest, String name) {
-        log.debug("generating md file {} from {}", dest, name);
+    void generateTalkMd(Path dest, Talk talk) {
+        log.debug("generating md file {} from {}", dest, talk.getTitle());
 
         try {
             Map<String, Object> root = new HashMap<>();
-            root.put("talk", yamlReader.readTalk(name).get());
+            root.put("talk", talk);
 
             generateMd(dest, root, "talk.vm");
         } catch (Exception e) {
-            log.error("unable to generate md file {} for {}", dest, name, e);
+            log.error("unable to generate md file {} for {}", dest, talk.getTitle(), e);
         }
     }
 

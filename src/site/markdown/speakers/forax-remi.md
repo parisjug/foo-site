@@ -13,4 +13,4 @@ Tombé dans le Java quand il était petit.
 
 Talks:
 
-* [Java is going nuts | native](../talks/20170214-jigsaw.html)
+* [Java is going nuts | native](/talks/2017/20170214-jigsaw.html)

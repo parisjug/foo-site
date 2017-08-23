@@ -58,7 +58,9 @@ public class GeneratorTest {
 
     @Test
     public void event_generator_should_success() throws IOException, URISyntaxException {
-        generator.generateEventMd(dest, "20170214-jigsaw");
+        Event event = reader.readEvent("20170214-jigsaw").get();
+
+        generator.generateEventMd(dest, event);
 
         assertThat(dest).exists();
     }

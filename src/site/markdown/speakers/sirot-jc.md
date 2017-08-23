@@ -13,4 +13,4 @@ Url: [@https://parisjug.org](https://parisjug.org)
 
 Talks:
 
-* [Java and docker, what’s up?](../talks/20170613-docker.html)
+* [Java and docker, what’s up?](/talks/2017/20170613-docker.html)
