@@ -6,6 +6,10 @@ Pour les modifs de css, voir `site.css`
 
 A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-site.
 
+# Build
+
+Lancer le Main puis lancer le build
+
 ```bash
 mvn package site
 ```
