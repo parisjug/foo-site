@@ -6,7 +6,7 @@ ${event.description!}
 
 <#if event.eventbrite??>
 <div class="iframe_container">
-<iframe  src='${event.eventbrite?replace("&", "&amp;")}' frameborder='0' height='450' width='100%' vspace='0' hspace='0' marginheight='5' marginwidth='5' scrolling='auto' allowtransparency='true'></iframe>
+<iframe  src='http://eventbrite.fr/tickets-external?eid=${event.eventbrite?replace("&", "&amp;")}' frameborder='0' height='450' width='100%' vspace='0' hspace='0' marginheight='5' marginwidth='5' scrolling='auto' allowtransparency='true'></iframe>
 </div>
 </#if>
 
@@ -27,9 +27,9 @@ ${event.description!}
 ${talk.description}
 
 par :
-    
+
 <#list talk.speakersObject as speaker>
-* [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl}))
+* [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl})
 </#list>
 </#list>
 
