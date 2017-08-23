@@ -9,4 +9,5 @@
 ## 2017/06/13 - [Docker et java 9](../events/20170613-docker.html)
 
 * [Java and docker, what’s up?](../talks/20170613-docker.html)
+* [Java 9 modulo les modules](../talks/20170613-java9.html)
 

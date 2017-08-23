@@ -5,6 +5,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.parisjug.model.*;
 
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -22,7 +23,12 @@ public class YamlReader {
     public Optional<Speaker> readSpeaker(String name, boolean recursive) {
 
         try {
-            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("speakers/" + name + ".yaml").toURI());
+            URL resource = YamlReader.class.getClassLoader().getResource("speakers/" + name + ".yaml");
+            if (resource == null) {
+                log.warn("unable to read {}", name);
+                return Optional.empty();
+            }
+            Path path = Paths.get(resource.toURI());
 
             Speaker speaker = mapper.readValue(path.toFile(), Speaker.class);
             if (recursive) {
@@ -50,7 +56,12 @@ public class YamlReader {
     public Optional<Event> readEvent(String name, boolean recursive) {
 
         try {
-            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("events/" + name + ".yaml").toURI());
+            URL resource = YamlReader.class.getClassLoader().getResource("events/" + name + ".yaml");
+            if (resource == null) {
+                log.warn("unable to read {}", name);
+                return Optional.empty();
+            }
+            Path path = Paths.get(resource.toURI());
             Event event = mapper.readValue(path.toFile(), Event.class);
 
             if (recursive) {
@@ -78,7 +89,13 @@ public class YamlReader {
     public Optional<Talk> readTalk(String name, boolean recursive) {
 
         try {
-            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("talks/" + name + ".yaml").toURI());
+            URL resource = YamlReader.class.getClassLoader().getResource("talks/" + name + ".yaml");
+            if (resource == null) {
+                log.warn("unable to read {}", name);
+                return Optional.empty();
+            }
+
+            Path path = Paths.get(resource.toURI());
             Talk talk = mapper.readValue(path.toFile(), Talk.class);
 
             if (recursive) {
@@ -101,7 +118,12 @@ public class YamlReader {
 
     public Optional<TeamMember> readTeamMember(String name) {
         try {
-            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("teams/" + name + ".yaml").toURI());
+            URL resource = YamlReader.class.getClassLoader().getResource("teams/" + name + ".yaml");
+            if (resource == null) {
+                log.warn("unable to read {}", name);
+                return Optional.empty();
+            }
+            Path path = Paths.get(resource.toURI());
             TeamMember team = mapper.readValue(path.toFile(), TeamMember.class);
 
             team.setInternalUrl("../teams/" + name + ".html");
@@ -115,7 +137,12 @@ public class YamlReader {
 
     public Optional<Sponsor> readSponsor(String name) {
         try {
-            Path path = Paths.get(YamlReader.class.getClassLoader().getResource("sponsors/" + name + ".yaml").toURI());
+            URL resource = YamlReader.class.getClassLoader().getResource("sponsors/" + name + ".yaml");
+            if (resource == null) {
+                log.warn("unable to read {}", name);
+                return Optional.empty();
+            }
+            Path path = Paths.get(resource.toURI());
             Sponsor sponsor = mapper.readValue(path.toFile(), Sponsor.class);
 
             sponsor.setInternalUrl("../sponsors/" + name + ".html");

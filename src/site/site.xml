@@ -23,7 +23,7 @@
             <topBarIcon>
                 <name>ParisJug</name>
                 <alt>ParisJug</alt>
-                <src>https://parisjug.org/xwiki/wiki/oldversion/download/Main/WebHome/Logo_full_BJPC_2015_01.png</src>
+                <src>https://www.parisjug.org/xwiki/wiki/oldversion/download/Main/WebHome/Logo_full_BJPC_2015_01.png</src>
                 <href>/index.html</href>
             </topBarIcon>
             <!--<sideBarEnabled>false</sideBarEnabled>-->
@@ -54,7 +54,7 @@
     </bannerLeft>
 
     <bannerRight>
-        <src>https://parisjug.org/xwiki/wiki/oldversion/skin/XWiki/DefaultSkin/LogoBJCP_black_2015_0150x0060.png</src>
+        <src>https://www.parisjug.org/xwiki/wiki/oldversion/skin/XWiki/DefaultSkin/LogoBJCP_black_2015_0150x0060.png</src>
     </bannerRight>
 
     <body>
