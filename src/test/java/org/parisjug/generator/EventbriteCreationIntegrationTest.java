@@ -3,6 +3,7 @@ package org.parisjug.generator;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.parisjug.MainEventbrite;
 import org.parisjug.model.Event;
@@ -19,6 +20,7 @@ public class EventbriteCreationIntegrationTest {
     private HtmlGenerator htmlGenerator;
     private MdGenerator mdGenerator;
     private YamlReader reader = new YamlReader();
+    private YamlWriter writer = new YamlWriter();
 
     @Before
     public void setup() throws IOException {
@@ -32,17 +34,40 @@ public class EventbriteCreationIntegrationTest {
     }
 
 
-
     @Test
     public void eventbrite_format_should_be_ok() throws IOException {
 
         MainEventbrite mainEventbrite = new MainEventbrite();
 
-        Optional<Event> event = reader.readEvent("20170613-docker");
+        String name = "20170613-docker";
+        Optional<Event> event = reader.readEvent(name);
 
-        String htmlContent = htmlGenerator.generateHtmlForEvent(mdGenerator, "20170613-docker");
+        String htmlContent = htmlGenerator.generateHtmlForEvent(mdGenerator, name);
 
-        assertThat(mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get(), htmlContent)).isTrue();
+        Optional<String> id = mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get(), htmlContent);
+
+        assertThat(id).isPresent();
+    }
+
+    @Test
+    @Ignore
+    public void eventbriteId_should_be_updated() throws IOException {
+
+        MainEventbrite mainEventbrite = new MainEventbrite();
+
+        String name = "20170613-docker";
+
+        Optional<String> id = Optional.of("test");
+
+        assertThat(id).isPresent();
+
+        if (id.isPresent()) {
+            mainEventbrite.updateYml(writer, name, id.get());
+        }
+
+        Optional<Event> event = reader.readEvent(name);
+        assertThat(event).isPresent();
+        assertThat(event.get().getEventbrite()).isEqualTo(id.get());
     }
 
 }

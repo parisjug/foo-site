@@ -3,10 +3,7 @@ package org.parisjug;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.parisjug.eventbrite.event.EventbriteResponse;
-import org.parisjug.generator.EventbriteGenerator;
-import org.parisjug.generator.MdGenerator;
-import org.parisjug.generator.HtmlGenerator;
-import org.parisjug.generator.YamlReader;
+import org.parisjug.generator.*;
 import org.parisjug.model.Event;
 
 import java.io.IOException;
@@ -21,6 +18,7 @@ public class MainEventbrite {
 
     public static void main(String... args) {
         YamlReader reader = new YamlReader();
+        YamlWriter writer = new YamlWriter();
         EventbriteGenerator eventbriteGenerator = new EventbriteGenerator();
         HtmlGenerator htmlGenerator = new HtmlGenerator();
         MdGenerator mdGenerator = new MdGenerator();
@@ -31,18 +29,31 @@ public class MainEventbrite {
 
         String htmlContent = htmlGenerator.generateHtmlForEvent(mdGenerator, "20170613-docker");
 
-        mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get(), htmlContent);
+        Optional<String> id = mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get(), htmlContent);
+        log.info("update your yaml file for {} with eventbriteId {}", event.get().getTitle(), id);
+        System.out.println("===========================================================");
+        System.out.println("update your yaml file for " + event.get().getTitle() + " with eventbriteId " + id);
+        System.out.println("===========================================================");
+        //TODO : ???
+//        mainEventbrite.updateYml(writer,"20170613-docker", id.get());
+    }
+
+    /*
+    TODO: utile???
+     */
+    public void updateYml(YamlWriter writer, String name, String id) {
+        writer.updateEventbriteIdFromEvent(name, id);
     }
 
 
-    public boolean createAndPublishEvent(EventbriteGenerator eventbriteGenerator, Event event, String htmlContent) {
+    public Optional<String> createAndPublishEvent(EventbriteGenerator eventbriteGenerator, Event event, String htmlContent) {
         String jsonRequest = eventbriteGenerator.generateRequest(event, htmlContent);
 
         Optional<String> responseBody = getResponseBodyFromEventbrite(jsonRequest, "https://www.eventbriteapi.com/v3/events/");
 
         if (!responseBody.isPresent()) {
             log.error("unable to continue");
-            return false;
+            return Optional.empty();
         }
 
         Optional<EventbriteResponse> eventbriteResponse = eventbriteGenerator.parseResponse(responseBody.get());
@@ -56,7 +67,7 @@ public class MainEventbrite {
             ticketClassResponseBody = getResponseBodyFromEventbrite(ticketClassJsonRequest, "https://www.eventbriteapi.com/v3/events/" + id + "/ticket_classes/");
         } else {
             log.error("an error occured during the unmarshalling");
-            return false;
+            return Optional.empty();
         }
 
         Optional<String> publishResponseBody = Optional.empty();
@@ -66,9 +77,9 @@ public class MainEventbrite {
 
         if (publishResponseBody.isPresent()) {
             log.debug("response from publish request {}", publishResponseBody.get());
-            return true;
+            return Optional.ofNullable(id);
         }
-        return false;
+        return Optional.empty();
     }
 
     private Optional<String> getResponseBodyFromEventbrite(String jsonRequest, String url) {
