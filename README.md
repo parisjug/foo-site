@@ -12,6 +12,13 @@ A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-
 mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Main" site:run
 ```
 
+# Manage Application Context
+
+Bon, parce que je n'ai pas voulu batailler avec l'applicationContext et parce que faire différentes configurations par rapport à l'env qui run était un peu overdesign, tout est en dur dans le fichier `ConstantUtils` et surtout nuisait à la visibilité du code, pour l'instant, il est setté pour githubpage. 
+
+Pour des tests en local, il suffit de mettre `public static final String APPLICATION_CONTEXT = "foo-site";` à `public static final String APPLICATION_CONTEXT = "";`.
+   
+
 # Deploy sur github page
 
 Mettre à jour son `.settings.xml`:
