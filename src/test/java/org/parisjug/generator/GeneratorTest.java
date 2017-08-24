@@ -22,11 +22,11 @@ public class GeneratorTest {
 
     private YamlReader reader = new YamlReader();
     private Path dest;
-    private Generator generator;
+    private MdGenerator generator;
 
     @Before
     public void setup() throws IOException {
-        generator = new Generator();
+        generator = new MdGenerator();
 
         dest = Paths.get(String.valueOf(File.createTempFile("test", ".md")));
 //      dest = Paths.get("/tmp/toto.md");

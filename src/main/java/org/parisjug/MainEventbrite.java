@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.parisjug.eventbrite.event.EventbriteResponse;
 import org.parisjug.generator.EventbriteGenerator;
+import org.parisjug.generator.MdGenerator;
+import org.parisjug.generator.HtmlGenerator;
 import org.parisjug.generator.YamlReader;
 import org.parisjug.model.Event;
 
@@ -13,23 +15,28 @@ import java.util.Optional;
 @Slf4j
 public class MainEventbrite {
 
+    public static final String EVENTBRITE_OAUTH_PERSONAL_TOKEN = System.getenv("EVENTBRITE_OAUTH_PERSONAL_TOKEN");
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
-
     private static final OkHttpClient client = new OkHttpClient();
-    public static final String EVENTBRITE_OAUTH_PERSONAL_TOKEN = System.getProperty("EVENTBRITE_OAUTH_PERSONAL_TOKEN");
 
     public static void main(String... args) {
         YamlReader reader = new YamlReader();
         EventbriteGenerator eventbriteGenerator = new EventbriteGenerator();
+        HtmlGenerator htmlGenerator = new HtmlGenerator();
+        MdGenerator mdGenerator = new MdGenerator();
 
         Optional<Event> event = reader.readEvent("20170613-docker");
 
         MainEventbrite mainEventbrite = new MainEventbrite();
-        mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get());
+
+        String htmlContent = htmlGenerator.generateHtmlForEvent(mdGenerator, "20170613-docker");
+
+        mainEventbrite.createAndPublishEvent(eventbriteGenerator, event.get(), htmlContent);
     }
 
-    public boolean createAndPublishEvent(EventbriteGenerator eventbriteGenerator, Event event) {
-        String jsonRequest = eventbriteGenerator.generateRequest(event);
+
+    public boolean createAndPublishEvent(EventbriteGenerator eventbriteGenerator, Event event, String htmlContent) {
+        String jsonRequest = eventbriteGenerator.generateRequest(event, htmlContent);
 
         Optional<String> responseBody = getResponseBodyFromEventbrite(jsonRequest, "https://www.eventbriteapi.com/v3/events/");
 

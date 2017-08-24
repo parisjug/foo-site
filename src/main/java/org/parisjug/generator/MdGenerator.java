@@ -23,15 +23,15 @@ import static java.util.stream.Collectors.toList;
 import static org.parisjug.ConfigUtils.*;
 
 @Slf4j
-public class Generator {
+public class MdGenerator {
 
     final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
     final private Configuration cfg;
     final private YamlReader yamlReader;
 
-    public Generator() {
+    public MdGenerator() {
         cfg = new Configuration(Configuration.VERSION_2_3_23);
-        cfg.setClassForTemplateLoading(Generator.class, "/");
+        cfg.setClassForTemplateLoading(MdGenerator.class, "/");
         cfg.setDefaultEncoding("UTF-8");
 
         yamlReader = new YamlReader();
@@ -68,8 +68,27 @@ public class Generator {
         }
     }
 
+    public void generateEventMdForExternalStuff(String name) {
+        Event event = yamlReader.readEvent(name).get();
+
+        //Gros Hack...
+        event.setInternalUrl(event.getExternalUrl());
+
+        List<Talk> talksObject = event.getTalksObject();
+        talksObject.stream().forEach(t -> {
+            t.setInternalUrl(t.getExternalUrl());
+            t.getSpeakersObject().stream().forEach(s -> s.setInternalUrl(s.getExternalUrl()));
+        });
+
+        internalGenerateEventMd(name, event);
+    }
+
     public void generateEventMd(String name) {
         Event event = yamlReader.readEvent(name).get();
+        internalGenerateEventMd(name, event);
+    }
+
+    private void internalGenerateEventMd(String name, Event event) {
         LocalDate date = LocalDate.parse(event.getDate(), formatter);
 
         Paths.get(MARKDOWN_DEST_PATH + "/" + MD_EVENTS_PATH + "/" + date.getYear()).toFile().mkdirs();

@@ -27,9 +27,9 @@ public class EventbriteGenerator {
         objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
     }
 
-    public String generateRequest(org.parisjug.model.Event event) {
+    public String generateRequest(org.parisjug.model.Event event, String htmlContent) {
         Name name = Name.builder().html(event.getTitle() + " (" + event.getDate() + ")").build();
-        Description description = Description.builder().html(event.getDescription()).build();
+        Description description = Description.builder().html(htmlContent).build();
 
         LocalDate startDate = LocalDate.parse(event.getDate(), formatter);
         ZoneId france = ZoneId.of("Europe/Paris");

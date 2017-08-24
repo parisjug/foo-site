@@ -22,7 +22,7 @@ ${event.description!}
 ### 19h15 à 19h30 : Accueil
 
 <#list event.talksObject as talk>
-### ${talk.startTime!} - ${talk.endTime!} : ${talk.title}
+### ${talk.startTime!} - ${talk.endTime!} : [${talk.title}](${talk.internalUrl})
 
 ${talk.description}
 
@@ -31,5 +31,6 @@ par :
 <#list talk.speakersObject as speaker>
 * [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl})
 </#list>
+
 </#list>
 
