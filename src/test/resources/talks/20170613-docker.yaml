@@ -1,0 +1,12 @@
+title: Java and docker, what’s up?
+date: 2020/06/13
+startTime: 19h30
+endTime: 20h30
+description: |
+  Pourquoi quand vous demandez a mettre en production java dans docker, on vous fait la grimace ?
+  Pourquoi vos "container" crashent si souvent et pourquoi les nodes swapent-ils tant ?
+  Partageons ensemble nos découvertes et réflexions sur java dans docker.
+speakers:
+  - sabourdin-charles
+  - sirot-jc
+
