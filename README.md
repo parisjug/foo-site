@@ -12,6 +12,31 @@ A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-
 mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Main" site:run
 ```
 
+# Deploy sur github page
+
+Mettre à jour son `.settings.xml`:
+
+```xml
+<settings>
+  <servers>
+
+  <server>
+      <id>github</id>
+      <username>xxx</username>
+      <password>xxx</password>
+  </server>
+  </servers>
+</settings>
+```
+
+Activer le profil `deploy` et lancer :
+
+```bash
+mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Main" site -Pdeploy
+```
+
+ 
+
 # Besoins Model
 
 ## Infos Speakers
