@@ -1,4 +1,4 @@
-# Rencontres précédentes
+# Previous
 
 
 ## 2016/11/15 - [Des builds incroyablement rapides avec Gradle 3 & Quoi de neuf JEE et les autres](/events/2016/20161115-Gradle.html)

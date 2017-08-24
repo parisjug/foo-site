@@ -18,16 +18,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
+import static org.parisjug.ConfigUtils.*;
 
 @Slf4j
 public class Generator {
 
+    final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
     final private Configuration cfg;
     final private YamlReader yamlReader;
-    final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
     public Generator() {
         cfg = new Configuration(Configuration.VERSION_2_3_23);
@@ -44,14 +44,14 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("speaker", yamlReader.readSpeaker(name).get());
 
-            generateMd(dest, root, "speaker.vm");
+            generateMd(dest, root, SPEAKER_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file {} for {}", dest, name, e);
         }
     }
 
     public void generateSpeakerMd(String name) {
-        Path dest = Paths.get("src/site/markdown/speakers/" + name + ".md");
+        Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_SPEAKERS_PATH + "/" + name + ".md");
         generateSpeakerMd(dest, name);
     }
 
@@ -62,7 +62,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("speakers", speakers);
 
-            generateMd(dest, root, "speakers.vm");
+            generateMd(dest, root, SPEAKERS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for speakers", dest, e);
         }
@@ -72,9 +72,9 @@ public class Generator {
         Event event = yamlReader.readEvent(name).get();
         LocalDate date = LocalDate.parse(event.getDate(), formatter);
 
-        Paths.get("src/site/markdown/events/" + date.getYear()).toFile().mkdirs();
+        Paths.get(MARKDOWN_DEST_PATH + "/" + MD_EVENTS_PATH + "/" + date.getYear()).toFile().mkdirs();
 
-        Path dest = Paths.get("src/site/markdown/events/" + date.getYear() + "/" + name + ".md");
+        Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".md");
 
         generateEventMd(dest, event);
     }
@@ -86,7 +86,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("event", event);
 
-            generateMd(dest, root, "event.vm");
+            generateMd(dest, root, EVENT_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file {} for {}", dest, event.getTitle(), e);
         }
@@ -99,7 +99,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("events", events);
 
-            generateMd(dest, root, "events.vm");
+            generateMd(dest, root, EVENTS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
         }
@@ -109,9 +109,9 @@ public class Generator {
         Talk talk = yamlReader.readTalk(name).get();
         LocalDate date = LocalDate.parse(talk.getDate(), formatter);
 
-        Paths.get("src/site/markdown/talks/" + date.getYear()).toFile().mkdirs();
+        Paths.get(MARKDOWN_DEST_PATH + "/" + MD_TALKS_PATH + "/" +  date.getYear()).toFile().mkdirs();
 
-        Path dest = Paths.get("src/site/markdown/talks/" + date.getYear() + "/" + name + ".md");
+        Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_TALKS_PATH + "/" +  date.getYear() + "/" + name + ".md");
 
         generateTalkMd(dest, talk);
     }
@@ -123,7 +123,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("talk", talk);
 
-            generateMd(dest, root, "talk.vm");
+            generateMd(dest, root, TALK_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file {} for {}", dest, talk.getTitle(), e);
         }
@@ -136,7 +136,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("talks", talks);
 
-            generateMd(dest, root, "talks.vm");
+            generateMd(dest, root, TALKS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
         }
@@ -144,7 +144,7 @@ public class Generator {
 
 
     public void generateTeamMd(String name) {
-        Path dest = Paths.get("src/site/markdown/teams/" + name + ".md");
+        Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_TEAM_PATH + "/" + name + ".md");
         generateTeamMd(dest, name);
     }
 
@@ -155,7 +155,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("team", yamlReader.readTeamMember(name).get());
 
-            generateMd(dest, root, "team.vm");
+            generateMd(dest, root, TEAM_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file {} for {}", dest, name, e);
         }
@@ -168,7 +168,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("teams", talks);
 
-            generateMd(dest, root, "teams.vm");
+            generateMd(dest, root, TEAMS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for teams", dest, e);
         }
@@ -176,7 +176,7 @@ public class Generator {
 
 
     public void generateSponsorMd(String name) {
-        Path dest = Paths.get("src/site/markdown/sponsors/" + name + ".md");
+        Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_SPONSORS_PATH + "/" + name + ".md");
         generateSponsorMd(dest, name);
     }
 
@@ -187,7 +187,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("sponsor", yamlReader.readSponsor(name).get());
 
-            generateMd(dest, root, "sponsor.vm");
+            generateMd(dest, root, SPONSOR_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file {} for {}", dest, name, e);
         }
@@ -200,7 +200,7 @@ public class Generator {
             Map<String, Object> root = new HashMap<>();
             root.put("sponsors", sponsors);
 
-            generateMd(dest, root, "sponsors.vm");
+            generateMd(dest, root, SPONSORS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for sponsors", dest, e);
         }
@@ -214,7 +214,7 @@ public class Generator {
             List<Event> collect = events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isBefore(LocalDate.now())).collect(toList());
             root.put("events", collect);
 
-            generateMd(dest, root, "previous_events.vm");
+            generateMd(dest, root, PREVIOUS_EVENTS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
         }
@@ -225,9 +225,9 @@ public class Generator {
 
         try {
             Map<String, Object> root = new HashMap<>();
-            root.put("events", events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isAfter(LocalDate.now())).collect(toList()));
+            root.put("events", events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isAfter(LocalDate.now()) || LocalDate.parse(e.getDate(), formatter).isEqual(LocalDate.now())).collect(toList()));
 
-            generateMd(dest, root, "next_events.vm");
+            generateMd(dest, root, NEXT_EVENTS_TEMPLATE);
         } catch (Exception e) {
             log.error("unable to generate md file for events", dest, e);
         }
@@ -237,7 +237,7 @@ public class Generator {
     private void generateMd(Path dest, Map<String, Object> map, String template) throws IOException, URISyntaxException, TemplateException {
         Writer out = new OutputStreamWriter(new FileOutputStream(dest.toFile()));
 
-        Template temp = cfg.getTemplate("templates/" + template);
+        Template temp = cfg.getTemplate(TEMPLATE_PATH + "/" + template);
         temp.process(map, out);
     }
 }

@@ -15,8 +15,11 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static org.parisjug.ConfigUtils.*;
+
 @Slf4j
 public class YamlReader {
+
     private static ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
@@ -27,7 +30,7 @@ public class YamlReader {
     public Optional<Speaker> readSpeaker(String name, boolean recursive) {
 
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource("speakers/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(YAML_SPEAKERS_PATH + "/" + name + ".yaml");
             if (resource == null) {
                 log.warn("unable to read {}", name);
                 return Optional.empty();
@@ -44,7 +47,8 @@ public class YamlReader {
 
                 speaker.setTalksObject((List<Talk>) talks);
             }
-            speaker.setInternalUrl("/speakers/" + name + ".html");
+            speaker.setInternalUrl("/" + MD_SPEAKERS_PATH + "/" + name + ".html");
+            speaker.setExternalUrl(URL_EXTERNAL + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(speaker);
         } catch (Exception e) {
@@ -60,7 +64,7 @@ public class YamlReader {
     public Optional<Event> readEvent(String name, boolean recursive) {
 
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource("events/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(YAML_EVENTS_PATH + "/" + name + ".yaml");
             if (resource == null) {
                 log.warn("unable to read {}", name);
                 return Optional.empty();
@@ -80,7 +84,8 @@ public class YamlReader {
             }
             LocalDate date = LocalDate.parse(event.getDate(), formatter);
 
-            event.setInternalUrl("/events/" + date.getYear() + "/" + name + ".html");
+            event.setInternalUrl("/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            event.setExternalUrl(URL_EXTERNAL + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(event);
         } catch (Exception e) {
@@ -96,7 +101,7 @@ public class YamlReader {
     public Optional<Talk> readTalk(String name, boolean recursive) {
 
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource("talks/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(YAML_TALKS_PATH + "/" + name + ".yaml");
             if (resource == null) {
                 log.warn("unable to read {}", name);
                 return Optional.empty();
@@ -116,7 +121,8 @@ public class YamlReader {
             }
             LocalDate date = LocalDate.parse(talk.getDate(), formatter);
 
-            talk.setInternalUrl("/talks/" + date.getYear() + "/" + name + ".html");
+            talk.setInternalUrl("/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            talk.setExternalUrl(URL_EXTERNAL + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(talk);
         } catch (Exception e) {
@@ -127,7 +133,7 @@ public class YamlReader {
 
     public Optional<TeamMember> readTeamMember(String name) {
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource("teams/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(YAML_TEAM_PATH + "/" + name + ".yaml");
             if (resource == null) {
                 log.warn("unable to read {}", name);
                 return Optional.empty();
@@ -135,7 +141,9 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             TeamMember team = mapper.readValue(path.toFile(), TeamMember.class);
 
-            team.setInternalUrl("/teams/" + name + ".html");
+            team.setInternalUrl("/" + MD_TEAM_PATH + "/" + name + ".html");
+            team.setExternalUrl(URL_EXTERNAL + "/" + MD_TEAM_PATH + "/" + name + ".html");
+
 
             return Optional.ofNullable(team);
         } catch (Exception e) {
@@ -146,7 +154,7 @@ public class YamlReader {
 
     public Optional<Sponsor> readSponsor(String name) {
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource("sponsors/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(YAML_SPONSORS_PATH + "/" + name + ".yaml");
             if (resource == null) {
                 log.warn("unable to read {}", name);
                 return Optional.empty();
@@ -154,7 +162,8 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             Sponsor sponsor = mapper.readValue(path.toFile(), Sponsor.class);
 
-            sponsor.setInternalUrl("/sponsors/" + name + ".html");
+            sponsor.setInternalUrl("/" + MD_SPONSORS_PATH + "/" + name + ".html");
+            sponsor.setExternalUrl(URL_EXTERNAL + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(sponsor);
         } catch (Exception e) {

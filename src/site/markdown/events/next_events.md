@@ -1,4 +1,4 @@
-# Prochaines rencontres
+# Next
 
 
 ## 2017/09/12 - [javaEE](/events/2017/201700912-javaEE.html)

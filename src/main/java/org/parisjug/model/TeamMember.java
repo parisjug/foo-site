@@ -10,7 +10,9 @@ public class TeamMember implements Comparable<TeamMember> {
     private String photo;
     private String tweet;
     private String url;
+
     private String internalUrl;
+    private String externalUrl;
 
     @Override
     public int compareTo(TeamMember o) {

@@ -14,8 +14,10 @@ public class Speaker implements Comparable<Speaker> {
     private String tweet;
     private String url;
     private List<String> talks = new ArrayList<>();
+
     private List<Talk> talksObject = new ArrayList<>();
     private String internalUrl;
+    private String externalUrl;
 
 
 

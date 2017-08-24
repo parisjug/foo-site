@@ -11,7 +11,10 @@ public class Sponsor implements Comparable<Sponsor> {
     private String url;
     private String logo;
     private SponsorType type;
+
     private String internalUrl;
+    private String externalUrl;
+
 
     @Override
     public int compareTo(Sponsor o) {

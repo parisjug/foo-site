@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project name="My Site Title"
          xmlns="http://maven.apache.org/DECORATION/1.7.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0 http://maven.apache.org/xsd/decoration-1.7.0.xsd">
@@ -61,8 +62,8 @@
 
         <menu name="Overview">
             <item name="Soirees" href="events/events.html">
-                <item name="Prochaines rencontres" href="events/next_events.html"/>
-                <item name="Rencontres précédentes" href="events/previous_events.html"/>
+                <item name="Next" href="events/next_events.html"/>
+                <item name="Previous" href="events/previous_events.html"/>
             </item>
             <item name="Speakers" href="speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
