@@ -5,7 +5,7 @@
 ## ${sponsor.name}
 
 <#if sponsor.logo??>
-![${sponsor.logo?replace("&", "&amp;")}](${sponsor.logo?replace("&", "&amp;")})
+![left-small](${sponsor.logo?replace("&", "&amp;")})
 </#if>
 
 ${sponsor.description!}

@@ -3,7 +3,7 @@
 ## ${speaker.firstName} ${speaker.lastName}
 
 <#if speaker.photo??>
-![test](${speaker.photo?replace("&", "&amp;")})
+![left-small](${speaker.photo?replace("&", "&amp;")})
 </#if>
 
 ${speaker.description!}

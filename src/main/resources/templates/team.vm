@@ -3,7 +3,7 @@
 ## ${team.firstName} ${team.lastName}
 
 <#if team.photo??>
-![test](${team.photo?replace("&", "&amp;")})
+![left-small](${team.photo?replace("&", "&amp;")})
 </#if>
 
 ${team.description!}

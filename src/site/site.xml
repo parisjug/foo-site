@@ -18,8 +18,9 @@
     <custom>
 
         <fluidoSkin>
-            <topBarEnabled>true</topBarEnabled>
-            <topBarContainerStyle>width: 70%;padding-top:200px;</topBarContainerStyle>
+            <!--<topBarEnabled>true</topBarEnabled>-->
+            <!--<topBarContainerStyle>width: 70%;padding-top:200px;</topBarContainerStyle>-->
+            <topBarContainerStyle>width: 70%;</topBarContainerStyle>
             <navBarStyle>navbar-inverse</navBarStyle>
             <topBarIcon>
                 <name>ParisJug</name>
@@ -27,7 +28,7 @@
                 <src>https://www.parisjug.org/xwiki/wiki/oldversion/download/Main/WebHome/Logo_full_BJPC_2015_01.png</src>
                 <href>/index.html</href>
             </topBarIcon>
-            <!--<sideBarEnabled>false</sideBarEnabled>-->
+            <sideBarEnabled>true</sideBarEnabled>
             <googleSearch>
                 <sitesearch/>
             </googleSearch>
@@ -60,7 +61,7 @@
 
     <body>
 
-        <menu name="Overview">
+        <menu name="Overview" ref="events/events.html">
             <item name="Soirees" href="events/events.html">
                 <item name="Next" href="events/next_events.html"/>
                 <item name="Previous" href="events/previous_events.html"/>
@@ -74,6 +75,12 @@
 
         </menu>
 
+        <!--<menu name="Speakers" ref="events/events.html">-->
+            <!--&lt;!&ndash;<item name="Speakers" href="speakers/speakers.html"/>&ndash;&gt;-->
+
+
+        <!--</menu>-->
+
         <!--<menu name="Overview2">-->
             <!--<item name="Test" href="markup.html"/>-->
             <!--<item name="Antonio" href="sample.html">-->
@@ -84,20 +91,23 @@
         <!--</menu>-->
 
 
-        <links>
-            <item name="ParisJug" href="https://www.parisjug.org"/>
-            <item name="Maven" href="http://maven.apache.org"/>
-        </links>
+        <!--<links>-->
+            <!--<item name="ParisJug" href="https://www.parisjug.org"/>-->
+            <!--<item name="Maven" href="http://maven.apache.org"/>-->
+        <!--</links>-->
 
-        <breadcrumbs>
-            <item name="Soirees" href="events/events.html"/>
-            <item name="Speakers" href="speakers/speakers.html"/>
-            <item name="Talks" href="talks/talks.html"/>
-            <item name="Sponsors" href="sponsors/sponsors.html"/>
-            <item name="Team" href="teams/teams.html"/>
-        </breadcrumbs>
+        <!--<breadcrumbs>-->
+            <!--<item name="Soirees" href="events/events.html">-->
+                <!--&lt;!&ndash;<item name="Next" href="events/next_events.html"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<item name="Previous" href="events/previous_events.html"/>&ndash;&gt;-->
+            <!--</item>-->
+            <!--<item name="Speakers" href="speakers/speakers.html"/>-->
+            <!--<item name="Talks" href="talks/talks.html"/>-->
+            <!--<item name="Sponsors" href="sponsors/sponsors.html"/>-->
+            <!--<item name="Team" href="teams/teams.html"/>-->
+        <!--</breadcrumbs>-->
 
-        <footer href="speakers/speakers.html">speakers/speakers.html</footer>
+        <footer><![CDATA[<img src="/images/sponsors.png" alt="center" />]]></footer>
 
     </body>
 
