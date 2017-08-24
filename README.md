@@ -36,6 +36,24 @@ mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Mai
 ```
 
  
+# Deployer un eventbrite
+
+__!! In Progress !!__
+
+Pour l'instant voir: `MainEventbrite`
+
+Positionner la variable systeme `EVENTBRITE_OAUTH_PERSONAL_TOKEN` avec le jeton Oauth2 eventbrite qui va bien.
+
+Lancer le `main()`. 
+
+__Ne pas oublier de mettre à jour le yaml avec l'id eventbrite remonté__
+
+__TODO__ : 
+
+* faire plus propre ;)
+* Si `main` il y a, faire une bonne récupération des paramètres ;)
+* Automatiser la publication pour ts les événements futurs si ils ont les infos minimales et si ils n'ont pas déjà été créer? Si c'est le cas, faire un check de modifications avec ce qui a déjà été publié et le ré-émettre?
+* Automatiser la mise à jour du Yaml? (désolé, j'ai pas réussi... :'( ) 
 
 # Besoins Model
 
@@ -46,7 +64,7 @@ mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Mai
 * [tweet]
 * [list<url>]
 * [description]
-* [list<talks>]
+* [list talks ]
 * [photo]
 
 ## Infos Talks
@@ -56,8 +74,8 @@ mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Mai
 * heureDebut
 * heureFin
 * description
-* [list<url> (slideshare/...)]
-* [list<speaker>]
+* [list url  (slideshare/...)]
+* [list speaker ]
 
 
 ## Infos Soiree
@@ -67,7 +85,7 @@ mvn clean package -Dmaven.test.skip exec:java -Dexec.mainClass="org.parisjug.Mai
 * description
 * heureDebutPause
 * heureFinPause
-* [list<talks>]
+* [list talks ]
 * [sponsorBuffet]
 * [flickR url]
 * lieu
