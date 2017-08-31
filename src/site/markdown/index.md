@@ -16,10 +16,6 @@
 <iframe align="center" src="https://www.flickr.com/slideShow/index.gne?user_id=131930460@N04&amp;set_id=72157683761058915" frameBorder="0" width="500" scrolling="no" height="500"></iframe>
 </div>
 
-
-![test](images/by-nc-sa.png)
-
-
 <<[speakers/speakers.md]
 
 #include "speakers/speakers.md"

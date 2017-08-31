@@ -5,10 +5,14 @@
 ## ${sponsor.name}
 
 <#if sponsor.logo??>
+
 ![left-small](/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")})
+
 </#if>
 
+~~~
 ${sponsor.description!}
+~~~
 
 <#if sponsor.tweet??>
 Twitter: [@${sponsor.tweet!}](http://twitter.com/${sponsor.tweet!})
