@@ -5,7 +5,7 @@
 ## ${sponsor.name}
 
 <#if sponsor.logo??>
-![left-small](${sponsor.logo?replace("&", "&amp;")})
+![left-small](/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")})
 </#if>
 
 ${sponsor.description!}

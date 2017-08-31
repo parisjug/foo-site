@@ -14,9 +14,10 @@
 package org.parisjug.model;
 
 public enum SponsorType {
-    PLATINE,
+    PLATINIUM,
     GOLD,
     BUFFET,
     GUEST,
+    PARTNER,
     OTHER
 }

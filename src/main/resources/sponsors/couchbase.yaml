@@ -1,0 +1,8 @@
+name: couchbase
+logo: couchbase.svg
+description: |
+  Developers around the world build enterprise web, mobile, and IoT applications on the Couchbase data management platform to support massive data volumes in real time. The Couchbase platform includes Couchbase Server, Couchbase Lite - the first mobile NoSQL database, and Couchbase Sync Gateway. 
+  Couchbase makes it easy for developers to build enterprise applications on NoSQL using N1QL, a declarative query language that extends SQL for JSON. Couchbase also makes it easy to operate at any scale, with elastic scalability and configurable cross data center replication to increase data locality and availability. All Couchbase products are open source projects.
+url: https://developer.couchbase.com/
+type: PLATINIUM
+
