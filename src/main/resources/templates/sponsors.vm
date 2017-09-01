@@ -38,10 +38,10 @@
 <#if sponsor.logo??>
   <#if sponsor.url??>
 <a href="${sponsor.url?replace("&", "&amp;")}" target="_blanck"> 
-<img class="${sponsor.type!} img" alt="${sponsor.name}" src="/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")}" />
+<img class="${sponsor.type!} img" alt="${sponsor.name}" src="${APPLICATION_CONTEXT!}/images/sponsors/${sponsor.sponsoringyear}/${sponsor.logo?replace("&", "&amp;")}" />
 </a>
  <#else>
-<img class="${sponsor.type!} img" alt="${sponsor.name}" src="/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")}" />
+<img class="${sponsor.type!} img" alt="${sponsor.name}" src="${APPLICATION_CONTEXT!}/images/sponsors/${sponsor.sponsoringyear}/${sponsor.logo?replace("&", "&amp;")}" />
  </#if>
 </#if>
 </div> <!-- class="col-lg-8" -->

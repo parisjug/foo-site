@@ -24,7 +24,7 @@ public class Sponsor implements Comparable<Sponsor> {
     private String url;
     private String logo;
     private SponsorType type;
-    private int sponsoringyear = 2017;
+    private String sponsoringyear = "2017";
 
     private String internalUrl;
     private String externalUrl;

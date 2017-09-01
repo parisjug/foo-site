@@ -86,7 +86,7 @@
         Copyright &#169;#copyright()All rights reserved.
        </span></br>
        <span>#publishDate( "bottom" $decoration.publishDate $decoration.version )</span>
-        <img src="/images/cc-by-nc-sa_icon.svg" />
+        <img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.eu.png" />
         
         </span>
       </div>

@@ -16,7 +16,7 @@ package org.parisjug;
 public class ConfigUtils {
 
     public static final String URL_EXTERNAL = "https://www.parisjug.org";
-    public static final String APPLICATION_CONTEXT = "foo-site";
+    public static final String APPLICATION_CONTEXT = "/foo-site";
 
     public static final String TEMPLATE_PATH = "templates";
     public static final String MARKDOWN_DEST_PATH = "src/site/markdown";

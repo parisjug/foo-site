@@ -61,8 +61,8 @@ public class YamlReader {
 
                 speaker.setTalksObject((List<Talk>) talks);
             }
-            speaker.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
-            speaker.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
+            speaker.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
+            speaker.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(speaker);
         } catch (Exception e) {
@@ -98,8 +98,8 @@ public class YamlReader {
             }
             LocalDate date = LocalDate.parse(event.getDate(), formatter);
 
-            event.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
-            event.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            event.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            event.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(event);
         } catch (Exception e) {
@@ -135,8 +135,8 @@ public class YamlReader {
             }
             LocalDate date = LocalDate.parse(talk.getDate(), formatter);
 
-            talk.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
-            talk.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            talk.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
+            talk.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(talk);
         } catch (Exception e) {
@@ -155,8 +155,8 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             TeamMember team = mapper.readValue(path.toFile(), TeamMember.class);
 
-            team.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
-            team.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
+            team.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
+            team.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
 
 
             return Optional.ofNullable(team);
@@ -176,8 +176,8 @@ public class YamlReader {
             Path path = Paths.get(resource.toURI());
             Sponsor sponsor = mapper.readValue(path.toFile(), Sponsor.class);
 
-            sponsor.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
-            sponsor.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : "/" + APPLICATION_CONTEXT) + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
+            sponsor.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
+            sponsor.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(sponsor);
         } catch (Exception e) {

@@ -56,6 +56,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("speaker", yamlReader.readSpeaker(name).get());
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, SPEAKER_TEMPLATE);
         } catch (Exception e) {
@@ -74,6 +75,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("speakers", speakers);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, SPEAKERS_TEMPLATE);
         } catch (Exception e) {
@@ -117,6 +119,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("event", event);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, EVENT_TEMPLATE);
         } catch (Exception e) {
@@ -130,6 +133,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("events", events);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, EVENTS_TEMPLATE);
         } catch (Exception e) {
@@ -154,6 +158,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("talk", talk);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, TALK_TEMPLATE);
         } catch (Exception e) {
@@ -167,6 +172,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("talks", talks);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, TALKS_TEMPLATE);
         } catch (Exception e) {
@@ -186,6 +192,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("team", yamlReader.readTeamMember(name).get());
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, TEAM_TEMPLATE);
         } catch (Exception e) {
@@ -199,6 +206,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("teams", talks);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, TEAMS_TEMPLATE);
         } catch (Exception e) {
@@ -218,6 +226,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("sponsor", yamlReader.readSponsor(name).get());
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, SPONSOR_TEMPLATE);
         } catch (Exception e) {
@@ -231,6 +240,7 @@ public class MdGenerator {
         try {
             Map<String, Object> root = new HashMap<>();
             root.put("sponsors", sponsors);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, SPONSORS_TEMPLATE);
         } catch (Exception e) {
@@ -245,6 +255,7 @@ public class MdGenerator {
             Map<String, Object> root = new HashMap<>();
             List<Event> collect = events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isBefore(LocalDate.now())).collect(toList());
             root.put("events", collect);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
 
             generateMd(dest, root, PREVIOUS_EVENTS_TEMPLATE);
         } catch (Exception e) {
