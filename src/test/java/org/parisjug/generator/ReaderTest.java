@@ -92,7 +92,7 @@ public class ReaderTest {
                 "Pour nous, le succès ne se conçoit que dans la durée. Nous réalisons des prestations de conseil et de réalisation autour des technologies présentes et à venir, dans une démarche respectueuse de nos clients et de nos salariés, ainsi que de l’environnement\n" +
                 ""
         );
-        assertThat(sponsor.get().getType()).isEqualTo(SponsorType.PLATINE);
+        assertThat(sponsor.get().getType()).isEqualTo(SponsorType.PLATINIUM);
 
         sponsor = reader.readSponsor("ippon");
         assertThat(sponsor.get().getType()).isEqualTo(SponsorType.GOLD);
