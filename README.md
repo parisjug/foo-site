@@ -62,6 +62,10 @@ __TODO__ :
 * Automatiser la publication pour ts les événements futurs si ils ont les infos minimales et si ils n'ont pas déjà été créer? Si c'est le cas, faire un check de modifications avec ce qui a déjà été publié et le ré-émettre?
 * Automatiser la mise à jour du Yaml? (désolé, j'ai pas réussi... :'( ) 
 
+__ATTENTION__:
+pour mettre des tag HTML, il faut qu'il n'y a pas de caratere avant le ligne
+au caratère "&" dans les description
+
 # Besoins Model
 
 ## Infos Speakers
@@ -101,6 +105,7 @@ __TODO__ :
 ## Info Sponsors
 
 * nom
+* sponsoringyear
 * description
 * logo
 * [autre?]

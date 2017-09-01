@@ -1,30 +1,63 @@
-# Sponsors
+<#if sponsors??>
+<div class="container">
+
+      
+      <div class="jumbotron">
+        TOTO add description
+      </div>
+
+    
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
 <#list sponsors as sponsor>
 
-## ${sponsor.name}
+<div class="row">
+
+
+<#if sponsor.type == "PLATINIUM" >
+<h2>Sponsor Platine : ${sponsor.name}</h2>
+</#if>
+
+<#if sponsor.type == "GOLD" >
+<h3>Sponsor Gold : ${sponsor.name} </h3>
+</#if>
+
+<#if sponsor.type == "PARTNER" >
+<h4>partenaire ${sponsor.name} </h4>
+</#if>
+
+<div class="col-lg-4">
+
 
 <#if sponsor.logo??>
-
-![left-small](/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")})
-
+  <#if sponsor.url??>
+<a href="${sponsor.url?replace("&", "&amp;")}" target="_blanck"> 
+<img class="${sponsor.type!} img" alt="${sponsor.name}" src="/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")}" />
+</a>
+ <#else>
+<img class="${sponsor.type!} img" alt="${sponsor.name}" src="/images/sponsors/${sponsor.sponsoringyear?replace(",", "")}/${sponsor.logo?replace("&", "&amp;")}" />
+ </#if>
 </#if>
+</div> <!-- class="col-lg-8" -->
+<div class="col-lg-8">
+<#if sponsor.description??>
+<div class="${sponsor.type!} img">
 
-~~~
 ${sponsor.description!}
-~~~
 
-<#if sponsor.tweet??>
-Twitter: [@${sponsor.tweet!}](http://twitter.com/${sponsor.tweet!})
+</div>
 </#if>
 
-<#if sponsor.url??>
-Url: [${sponsor.url?replace("&", "&amp;")}](${sponsor.url?replace("&", "&amp;")})
-</#if>
-
-<#if sponsor.type??>
-Type: ${sponsor.type}
-</#if>
-
+</div> <!-- class="col-lg-8" -->
+<br/>
+</div> <!-- class="row" -->
 </#list>
 
+</div>
+</#if>

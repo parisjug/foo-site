@@ -26,10 +26,11 @@
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="Site web du Paris Java user groups">
     <meta name="author" content="">
     <link href="/css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="/css/offcanvas.css" rel="stylesheet">
+    <link href="/css/maven-theme.css" rel="stylesheet">
     <link href="/css/sticky-footer-navbar.css" rel="stylesheet">
     <link rel="icon" href="../../../../favicon.ico">
 
@@ -54,6 +55,9 @@
  
 </head>
 <body class="composite">
+
+
+
 <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         

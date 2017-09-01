@@ -146,6 +146,13 @@
                     <templateFile>${basedir}/src/site/maven-site.vm</templateFile>
                     <outputEncoding>UTF-8</outputEncoding>
                 </configuration>
+                     <dependencies>
+                <dependency>
+                  <groupId>org.apache.maven.doxia</groupId>
+                  <artifactId>doxia-module-markdown</artifactId>
+                  <version>1.7</version>
+                </dependency>
+              </dependencies>
             </plugin>
 
             <plugin>
