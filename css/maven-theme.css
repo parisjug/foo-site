@@ -165,20 +165,59 @@ dt {
 *
 */
 
+.PLATINIUM.title {
+    border: gray;
+    margin: auto;
+    font-size: x-large;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 10px 10px 10px 20px;
+    border: 1px solid gray;
+    background-color: lightgrey;
+}
+
+.PLATINIUM {
+    font-size: medium;
+    margin: 7px 1px 3px 1px;
+}
+
+.img.PLATINIUM.img {
+    height: 150px;
+}
+
+
+/** */
+.GOLD.title {
+    border: gray;
+    margin: auto;
+    font-size: medium;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid gray;
+    background-color: beige;
+}
+
 .img.GOLD.img {
     height: 80px;
 }
 
 .GOLD {
     font-size: smaller;
+    margin: 7px 1px 3px 1px;
 }
 
-.img.PLATINIUM.img {
-    height: 120px;
-}
 
-.PLATINIUM {
+/** */
+.PARTNER.title {
+    border: gray;
+    margin: auto;
     font-size: medium;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid gray;
+    /**background-color: beige;*/
 }
 
 .img.PARTNER.img {
@@ -187,6 +226,7 @@ dt {
 
 .PARTNER {
     font-size: smaller;
+    margin: 7px 1px 3px 1px;
 }
 
 .poweredBy {
