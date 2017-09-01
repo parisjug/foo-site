@@ -21,15 +21,15 @@
 
 
 <#if sponsor.type == "PLATINIUM" >
-<h2>Sponsor Platine : ${sponsor.name}</h2>
+<div class="${sponsor.type!} title">Sponsor Platine : ${sponsor.name}</div>
 </#if>
 
 <#if sponsor.type == "GOLD" >
-<h3>Sponsor Gold : ${sponsor.name} </h3>
+<div class="${sponsor.type!} title">Sponsor Gold : ${sponsor.name} </div>
 </#if>
 
 <#if sponsor.type == "PARTNER" >
-<h4>partenaire ${sponsor.name} </h4>
+<div class="${sponsor.type!} title">partenaire ${sponsor.name} </div>
 </#if>
 
 <div class="col-lg-4">
@@ -55,7 +55,7 @@ ${sponsor.description!}
 </#if>
 
 </div> <!-- class="col-lg-8" -->
-<br/>
+<div class="clearfix visible-xs"></div>
 </div> <!-- class="row" -->
 </#list>
 
