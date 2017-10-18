@@ -186,6 +186,7 @@ dt {
 }
 .img.PLATINIUM.desc {
     height: 200px;
+    text-align: justify;
 }
 
 /** */
@@ -206,6 +207,7 @@ dt {
 
 .img.GOLD.desc {
     height: 160px;
+    text-align: justify;
 }
 .GOLD {
     font-size: smaller;
@@ -230,6 +232,7 @@ dt {
 }
 .img.PARTNER.desc {
     height: 60px;
+    text-align: justify;
 }
 
 .PARTNER {
@@ -239,4 +242,23 @@ dt {
 
 .poweredBy {
     height: 20px;
+}
+
+.speaker.img {
+    height: 20px;
+}
+.speaker.desc {
+    height: 20px;
+    text-align: justify;
+}
+
+.team {
+    height: 120px;
+    width: 120px;
+}
+
+p.teamTitle {
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: bold;
 }

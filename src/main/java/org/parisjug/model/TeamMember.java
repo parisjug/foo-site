@@ -19,16 +19,22 @@ import lombok.Data;
 public class TeamMember implements Comparable<TeamMember> {
     private String lastName;
     private String firstName;
-    private String description;
+    private String description="";
     private String photo;
     private String tweet;
     private String url;
+    private String title = "";
+    private String group;
+    private String linkedin;
+    private String github;
 
     private String internalUrl;
     private String externalUrl;
+    private Integer rang = 0;
 
+    
     @Override
     public int compareTo(TeamMember o) {
-        return lastName.compareTo(o.lastName);
+        return rang.compareTo(o.rang);
     }
 }

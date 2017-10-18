@@ -2,21 +2,34 @@
 
 <#list teams as team>
 
-## ${team.firstName} ${team.lastName}
 
-<#if team.photo??>
-![left-small](${team.photo?replace("&", "&amp;")})
+
+<div class="col-lg-2">
+<p class="teamTitle">
+<#if team.title??>
+ ${team.title!} :
 </#if>
 
-${team.description!}
+${team.firstName} ${team.lastName} <br />
+</p>
+<#if team.photo??>
+<img class="team" src="${team.photo?replace("&", "&amp;")}" />
+</#if>
+</div>
+<div class="col-lg-4" >
+<p>${team.description!}</p>
 
 <#if team.tweet??>
-Twitter: [@${team.tweet!}](http://twitter.com/${team.tweet!})
+<p>Twitter: <a href="https://twitter.com/${team.tweet!}">${team.tweet!}</a></p>
+</#if>
+
+<#if team.github??>
+<p>github: <a href="https://github.com/${team.github!}">${team.github!}</a></p>
 </#if>
 
 <#if team.url??>
-Url: [@${team.url?replace("&", "&amp;")}](${team.url?replace("&", "&amp;")})
+<p>Siteweb: <a href="${team.url?replace("&", "&amp;")}">${team.url?replace("&", "&amp;")}</a></p>
 </#if>
-
+</div>
 
 </#list>

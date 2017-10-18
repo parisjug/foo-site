@@ -3,16 +3,12 @@
 
       
       <div class="jumbotron">
-        TOTO add description
+          <p>Les réunions du Paris Java User Group sont gratuites et ouvertes à tous. Pour que ces réunions soient de bonnes qualités, il nous arrive de faire venir des experts internationaux que nous devons défrayer et loger à Paris. </p>
+          <p>De plus, le Paris JUG est gerrer par BJPC en loi 1901 indépendante de toute autre organisation ou organisme. Nous nous appuyons donc sur nos sponsors et leurs contributions généreuses pour faire vivre le JUG (conférences, repas-rencontres, hébergement du site, supports de communication...)</p>
+          <p>Si vous êtes intéressés et que vous voulez sponsoriser d’une manière ou d’une autre le Paris JUG, <a href="mailto:team@parisjug.org">contactez-nous</a> afin de recevoir notre plaquette.</p>
+
       </div>
 
-    
-
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 
 <#list sponsors as sponsor>
