@@ -182,9 +182,11 @@ dt {
 }
 
 .img.PLATINIUM.img {
-    height: 150px;
+    height: 100px;
 }
-
+.img.PLATINIUM.desc {
+    height: 200px;
+}
 
 /** */
 .GOLD.title {
@@ -202,6 +204,9 @@ dt {
     height: 80px;
 }
 
+.img.GOLD.desc {
+    height: 160px;
+}
 .GOLD {
     font-size: smaller;
     margin: 7px 1px 3px 1px;
@@ -222,6 +227,9 @@ dt {
 
 .img.PARTNER.img {
     height: 40px;
+}
+.img.PARTNER.desc {
+    height: 60px;
 }
 
 .PARTNER {

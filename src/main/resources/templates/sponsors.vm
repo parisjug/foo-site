@@ -47,7 +47,7 @@
 </div> <!-- class="col-lg-8" -->
 <div class="col-lg-8">
 <#if sponsor.description??>
-<div class="${sponsor.type!} img">
+<div class="${sponsor.type!} desc">
 
 ${sponsor.description!}
 
