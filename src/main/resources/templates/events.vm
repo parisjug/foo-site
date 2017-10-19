@@ -1,5 +1,7 @@
 # Events
 
+<div id='timeline-embed' class="row"></div>
+
 <#list events as event>
 
 ## ${event.date} - [${event.title}](${event.internalUrl})
