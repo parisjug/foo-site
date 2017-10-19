@@ -67,7 +67,42 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+<nav class="navbar navbar-default">
+      <div class="container">
+        
+        <!-- start -->
+        <!-- ToDO make it dynamic -->
+        <div class="col-sm-3">
+          <img src="/images/sponsors/2017/arolla.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/zenika.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/carbon-IT.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/couchbase.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/mirakl.svg" class="bannerPlatine" style="width: 300px" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/norsys.svg" class="bannerPlatine" style="width: 300px" alt="Arolla">
+        </div>
+                <div class="col-sm-3">
+          <img src="/images/sponsors/2017/oxiane.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-1">
+          <img src="/images/sponsors/2017/ippon.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+                <div class="col-sm-1">
+          <img src="/images/sponsors/2017/viseo.svg" class="bannerPlatine" alt="Arolla">
+        </div>
+        <!-- end -->
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 <div id="bodyColumn">
     <div id="contentBox">
         $bodyContent
