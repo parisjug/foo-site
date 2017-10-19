@@ -141,6 +141,22 @@ public class MdGenerator {
         }
     }
 
+    //this might not be the best place, but ...
+    public void generateEventsJSonMd(Path dest, List<Event> events) {
+        log.debug("generating md file {} for events", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("events", events);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
+
+            generateMd(dest, root, EVENTS_JSON_TEMPLATE);
+        } catch (Exception e) {
+            log.error("unable to generate md file for events", dest, e);
+        }
+    }
+
+    
     public void generateTalkMd(String name) {
         Talk talk = yamlReader.readTalk(name).get();
         LocalDate date = LocalDate.parse(talk.getDate(), formatter);

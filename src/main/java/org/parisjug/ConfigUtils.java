@@ -37,6 +37,7 @@ public class ConfigUtils {
     public static final String SPEAKER_TEMPLATE = "speaker.vm";
     public static final String EVENT_TEMPLATE = "event.vm";
     public static final String EVENTS_TEMPLATE = "events.vm";
+    public static final String EVENTS_JSON_TEMPLATE = "eventsJSon.vm";
     public static final String TALK_TEMPLATE = "talk.vm";
     public static final String TALKS_TEMPLATE = "talks.vm";
     public static final String TEAM_TEMPLATE = "team.vm";

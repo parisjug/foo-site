@@ -42,8 +42,10 @@ public class Main {
         Path eventsPath = Paths.get(Main.class.getClassLoader().getResource("events").toURI());
 
         Paths.get("src/site/markdown/events").toFile().mkdirs();
+        Paths.get("src/site/resources").toFile().mkdirs();
 
         Path eventsOutput = Paths.get("src/site/markdown/events/events.md");
+        Path eventsJsonOutput = Paths.get("src/site/resources/timeline3.json");
         Path oldEventsOutput = Paths.get("src/site/markdown/events/previous_events.md");
         Path nextEventsOutput = Paths.get("src/site/markdown/events/next_events.md");
 
@@ -56,6 +58,7 @@ public class Main {
                 .collect(toList());
 
         generator.generateEventsMd(eventsOutput, events);
+        generator.generateEventsJSonMd(eventsJsonOutput, events);
         generator.generatePreviousEventsMd(oldEventsOutput, events);
         generator.generateNextEventsMd(nextEventsOutput, events);
 
