@@ -13,8 +13,7 @@
     <body>
 
         <menu name="Paris Java User Group" ref="/index.html">
-            <item name="Prochaine soirees" href="/events/next_events.html" />
-            <item name="Ancienne soirees" href="/events/previous_events.html"/>
+            <item name="Les soirees" href="/events/events.html" />
             <item name="Speakers" href="/speakers/speakers.html"/>
             <item name="Talks" href="talks/talks.html"/>
             <item name="Sponsors" href="sponsors/sponsors.html"/>

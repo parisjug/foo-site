@@ -151,7 +151,5 @@
 <script type="text/javascript">
         timeline = new TL.Timeline('timeline-embed', '/timeline3.json', { hash_bookmark: false});
         timeline.updateDisplay();
-        alert('toto');
-
 </script>
 </html>
