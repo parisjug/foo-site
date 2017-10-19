@@ -149,7 +149,9 @@
 
 <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 <script type="text/javascript">
-        timeline = new TL.Timeline('timeline-embed',
-          'https://docs.google.com/spreadsheets/d/1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI/pubhtml');
+        timeline = new TL.Timeline('timeline-embed', '/timeline3.json', { hash_bookmark: false});
+        timeline.updateDisplay();
+        alert('toto');
+
 </script>
 </html>
