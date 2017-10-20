@@ -11,31 +11,31 @@
         }
     },
     "events": [
-<#list events as event>
+<#list talks as talk>
       {
         "media": {
-<#if event.youtubeVideoUrl??>
-          "url": "${event.youtubeVideoUrl}",
+<#if talk.youtubeVideoUrl??>
+          "url": "${talk.youtubeVideoUrl}",
 <#else>
           "url": "",
 </#if>        
-          "caption": "${event.title?html}",
+          "caption": "${talk.title?html}",
           "credit": ""
         },
         "start_date": {
-          "month": "${event.eventMonth?string["0"]}",
-          "day": "${event.eventDay?string["0"]}",
-          "year": "${event.eventYear?string["0"]}"
+          "month": "${talk.eventMonth?string["0"]}",
+          "day": "${talk.eventDay?string["0"]}",
+          "year": "${talk.eventYear?string["0"]}"
         },
         "text": {
-          "headline": "${event.title?html}",
-<#if event.description??>
-          "text": "${event.description?json_string?html}"
+          "headline": "${talk.title?html}",
+<#if talk.description??>
+          "text": "${talk.description?json_string}"
 <#else>
           "text": ""
 </#if>          
         }
-<#if event?has_next>
+<#if talk?has_next>
       },
 <#else>
       }

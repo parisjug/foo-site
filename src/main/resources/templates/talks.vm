@@ -1,5 +1,7 @@
 # Talks
 
+<div id='timeline-talks-embed' class="row" style="width: 100%; height: 600px"></div>
+
 <#list talks?sort_by("startTime")?sort_by("date") as talk>
 
 ## ${talk.date} - [${talk.title}](${talk.internalUrl})

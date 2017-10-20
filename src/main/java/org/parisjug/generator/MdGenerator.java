@@ -196,6 +196,21 @@ public class MdGenerator {
         }
     }
 
+      //this might not be the best place, but ...
+    public void generateTalksJSonMd(Path dest, List<Talk> talks) {
+        log.debug("generating md file {} for events", dest);
+
+        try {
+            Map<String, Object> root = new HashMap<>();
+            root.put("talks", talks);
+            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
+
+            generateMd(dest, root, TALKS_JSON_TEMPLATE);
+        } catch (TemplateException | IOException | URISyntaxException e) {
+            log.error("unable to generate md file for events", dest, e);
+        }
+    }
+
 
     public void generateTeamMd(String name) {
         Path dest = Paths.get(MARKDOWN_DEST_PATH + "/" + MD_TEAM_PATH + "/" + name + ".md");

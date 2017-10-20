@@ -40,6 +40,7 @@ public class ConfigUtils {
     public static final String EVENTS_JSON_TEMPLATE = "eventsJSon.vm";
     public static final String TALK_TEMPLATE = "talk.vm";
     public static final String TALKS_TEMPLATE = "talks.vm";
+    public static final String TALKS_JSON_TEMPLATE = "talksJSon.vm";
     public static final String TEAM_TEMPLATE = "team.vm";
     public static final String TEAMS_TEMPLATE = "teams.vm";
     public static final String SPONSOR_TEMPLATE = "sponsor.vm";

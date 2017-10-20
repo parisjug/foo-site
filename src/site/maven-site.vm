@@ -150,7 +150,29 @@
 
 <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 <script type="text/javascript">
-        timeline = new TL.Timeline('timeline-embed', '/timeline3.json', { hash_bookmark: false});
-        timeline.updateDisplay();
+    if (document.getElementById('timeline-talks-embed') != null) {
+        $(document).ready(function(){
+            var embed = document.getElementById('timeline-talks-embed');
+            embed.style.height = getComputedStyle(document.body).height;
+            window.timeline = new TL.Timeline('timeline-talks-embed', '/timeline3-talks.json', { hash_bookmark: false});
+            window.addEventListener('resize', function() {
+                var embed = document.getElementById('timeline-talks-embed');
+                embed.style.height = getComputedStyle(document.body).height;
+                timeline.updateDisplay();
+            })
+      });
+    };
+    if (document.getElementById('timeline-events-embed') != null) {
+        $(document).ready(function(){
+            var embed = document.getElementById('timeline-events-embed');
+            embed.style.height = getComputedStyle(document.body).height;
+            window.timeline = new TL.Timeline('timeline-events-embed', '/timeline3-events.json', { hash_bookmark: false});
+            window.addEventListener('resize', function() {
+                var embed = document.getElementById('timeline-events-embed');
+                embed.style.height = getComputedStyle(document.body).height;
+                timeline.updateDisplay();
+            })
+      });
+    };
 </script>
 </html>

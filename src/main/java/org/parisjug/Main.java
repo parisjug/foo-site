@@ -45,9 +45,7 @@ public class Main {
         Paths.get("src/site/resources").toFile().mkdirs();
 
         Path eventsOutput = Paths.get("src/site/markdown/events/events.md");
-        Path eventsJsonOutput = Paths.get("src/site/resources/timeline3.json");
-        Path oldEventsOutput = Paths.get("src/site/markdown/events/previous_events.md");
-        Path nextEventsOutput = Paths.get("src/site/markdown/events/next_events.md");
+        Path eventsJsonOutput = Paths.get("src/site/resources/timeline3-events.json");
 
         List<Event> events = Files.list(eventsPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
@@ -93,6 +91,8 @@ public class Main {
         Paths.get("src/site/markdown/talks").toFile().mkdirs();
 
         Path talksOutput = Paths.get("src/site/markdown/talks/talks.md");
+        Path talksJsonOutput = Paths.get("src/site/resources/timeline3-talks.json");
+
 
         List<Talk> talks = Files.list(talksPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
@@ -103,6 +103,7 @@ public class Main {
                 .collect(toList());
 
         generator.generateTalksMd(talksOutput, talks);
+        generator.generateTalksJSonMd(talksJsonOutput, talks);
 
         Files.list(talksPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))
