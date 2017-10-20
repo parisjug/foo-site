@@ -264,34 +264,7 @@ public class MdGenerator {
         }
     }
 
-    public void generatePreviousEventsMd(Path dest, List<Event> events) {
-        log.debug("generating md file {} for events", dest);
-
-        try {
-            Map<String, Object> root = new HashMap<>();
-            List<Event> collect = events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isBefore(LocalDate.now())).collect(toList());
-            root.put("events", collect);
-            root.put("APPLICATION_CONTEXT", APPLICATION_CONTEXT);
-
-            generateMd(dest, root, PREVIOUS_EVENTS_TEMPLATE);
-        } catch (Exception e) {
-            log.error("unable to generate md file for events", dest, e);
-        }
-    }
-
-    public void generateNextEventsMd(Path dest, List<Event> events) {
-        log.debug("generating md file {} for events", dest);
-
-        try {
-            Map<String, Object> root = new HashMap<>();
-            root.put("events", events.stream().filter(e -> LocalDate.parse(e.getDate(), formatter).isAfter(LocalDate.now()) || LocalDate.parse(e.getDate(), formatter).isEqual(LocalDate.now())).collect(toList()));
-
-            generateMd(dest, root, NEXT_EVENTS_TEMPLATE);
-        } catch (Exception e) {
-            log.error("unable to generate md file for events", dest, e);
-        }
-    }
-
+    
 
     private void generateMd(Path dest, Map<String, Object> map, String template) throws IOException, URISyntaxException, TemplateException {
         Writer out = new OutputStreamWriter(new FileOutputStream(dest.toFile()));

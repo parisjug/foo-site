@@ -10,8 +10,16 @@ N'hésitez pas a nous contacter si vous voulez presenter un sujet chez nous.
 ```
 
 <#list speakers as speaker>
+<div class="col-lg-2">
 
-## [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl})
+<a href="${speaker.internalUrl}">${speaker.firstName} ${speaker.lastName}</a><br />
 
+<#if speaker.photo??>
+<img src="${speaker.photo?html}" class="speakers img" alt="${speaker.firstName} ${speaker.lastName}" />
+<#else>
+<img src="/images/juggy.png" class="speakers img" alt="Juggy" />
+</#if>
+
+</div>
 
 </#list>

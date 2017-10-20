@@ -44,9 +44,7 @@ public class ConfigUtils {
     public static final String TEAMS_TEMPLATE = "teams.vm";
     public static final String SPONSOR_TEMPLATE = "sponsor.vm";
     public static final String SPONSORS_TEMPLATE = "sponsors.vm";
-    public static final String PREVIOUS_EVENTS_TEMPLATE = "previous_events.vm";
-    public static final String NEXT_EVENTS_TEMPLATE = "next_events.vm";
-
+    
     private ConfigUtils() {
     }
 

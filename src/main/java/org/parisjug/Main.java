@@ -59,8 +59,6 @@ public class Main {
 
         generator.generateEventsMd(eventsOutput, events);
         generator.generateEventsJSonMd(eventsJsonOutput, events);
-        generator.generatePreviousEventsMd(oldEventsOutput, events);
-        generator.generateNextEventsMd(nextEventsOutput, events);
 
         Files.list(eventsPath)
                 .map(f -> f.getFileName().toString().replaceFirst(".yaml", ""))

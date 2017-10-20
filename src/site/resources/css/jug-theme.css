@@ -107,3 +107,7 @@ p.teamTitle {
  font-weight: bold;
    
 }
+
+.img.speakers.img {
+    height: 50px;
+}
