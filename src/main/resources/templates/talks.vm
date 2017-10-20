@@ -1,6 +1,6 @@
 # Talks
 
-<#list talks as talk>
+<#list talks?sort_by("startTime")?sort_by("date") as talk>
 
 ## ${talk.date} - [${talk.title}](${talk.internalUrl})
 

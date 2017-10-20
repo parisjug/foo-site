@@ -6,6 +6,7 @@ Pour les modifs de css, voir `site.css`
 
 A noter que si utilisation d'asciidoc, on ne bénéficie pas de layout du maven-site.
 
+
 # Build
 
 ```bash
@@ -68,6 +69,8 @@ au caratère "&" dans les description
 
 # Besoins Model
 
+http://freemarker.org/docs/ref_directive_if.html
+
 ## Infos Speakers
 
 * nom
@@ -81,7 +84,7 @@ au caratère "&" dans les description
 ## Infos Talks
 
 * titre
-* date
+* date (au format yyyy/mm/dd par example 2013/2/12)
 * heureDebut
 * heureFin
 * description

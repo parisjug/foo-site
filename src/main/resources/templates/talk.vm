@@ -1,14 +1,39 @@
-# Talk
+<h1>Talk</h1>
 
-## ${talk.title}
 
-${talk.date}
+<#if talk.youtubeVideoUrl??>
+<div class="col-lg-6">
+<#else>
+<div class="col-lg-12">
+</#if>
+
+<div class="talkTitle">${talk.title?html}</div>
+
+<div class="talkDate">${talk.date} : ${talk.startTime} - ${talk.endTime} </div>
+
+<#if talk.youtubeVideoUrl??>
+<object data="https://www.youtube.com/embed/${talk.youtubeVideoUrl}">
+</object>
+</div>
+<div class="talk col-lg-4">
+
+</#if>
 
 ${talk.description!}
 
-par :
-
-<#list talk.speakersObject as speaker>
-* [${speaker.firstName} ${speaker.lastName}](${speaker.internalUrl})
+<#if talk.keywords??>
+<div class="keywords">
+<em>keywords</em> :
+<#list talk.keywords as keyword>
+${keyword} - 
 </#list>
+</div>
+</#if>
 
+par :
+<ul>
+<#list talk.speakersObject as speaker>
+<li><a href="${speaker.internalUrl}">${speaker.firstName?html} ${speaker.lastName?html}</a></li>
+</#list>
+</ul>
+</div>

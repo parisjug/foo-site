@@ -21,7 +21,7 @@ ${event.description!}
 
 ### 19h15 à 19h30 : Accueil
 
-<#list event.talksObject as talk>
+<#list event.talksObject?sort_by("startTime") as talk>
 ### ${talk.startTime!} - ${talk.endTime!} : [${talk.title}](${talk.internalUrl})
 
 ${talk.description}

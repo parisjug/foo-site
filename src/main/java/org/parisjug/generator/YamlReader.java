@@ -15,6 +15,8 @@ package org.parisjug.generator;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.parisjug.model.*;
@@ -42,11 +44,12 @@ public class YamlReader {
     }
 
     public Optional<Speaker> readSpeaker(String name, boolean recursive) {
-
+        String ressourcePath = YAML_SPEAKERS_PATH + "/" + name + ".yaml";
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource(YAML_SPEAKERS_PATH + "/" + name + ".yaml");
+
+            URL resource = YamlReader.class.getClassLoader().getResource(ressourcePath);
             if (resource == null) {
-                log.warn("unable to read {}", name);
+                log.warn("unable to read {}", ressourcePath);
                 return Optional.empty();
             }
             Path path = Paths.get(resource.toURI());
@@ -65,8 +68,8 @@ public class YamlReader {
             speaker.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPEAKERS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(speaker);
-        } catch (Exception e) {
-            log.error("unable to read {}", name, e);
+        } catch (IOException | URISyntaxException e) {
+            log.error("unable to read {}", ressourcePath, e);
             return Optional.empty();
         }
     }
@@ -76,11 +79,11 @@ public class YamlReader {
     }
 
     public Optional<Event> readEvent(String name, boolean recursive) {
-
+        String ressourcePath = YAML_EVENTS_PATH + "/" + name + ".yaml";
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource(YAML_EVENTS_PATH + "/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(ressourcePath);
             if (resource == null) {
-                log.warn("unable to read {}", name);
+                log.warn("unable to read {}", ressourcePath);
                 return Optional.empty();
             }
             Path path = Paths.get(resource.toURI());
@@ -102,8 +105,8 @@ public class YamlReader {
             event.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_EVENTS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(event);
-        } catch (Exception e) {
-            log.error("unable to read {}", name, e);
+        } catch (IOException | URISyntaxException e) {
+            log.error("unable to read {}", ressourcePath, e);
             return Optional.empty();
         }
     }
@@ -113,11 +116,12 @@ public class YamlReader {
     }
 
     public Optional<Talk> readTalk(String name, boolean recursive) {
+        String ressourcePath = YAML_TALKS_PATH + "/" + name + ".yaml";
 
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource(YAML_TALKS_PATH + "/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(ressourcePath);
             if (resource == null) {
-                log.warn("unable to read {}", name);
+                log.warn("unable to read {}", ressourcePath);
                 return Optional.empty();
             }
 
@@ -139,17 +143,19 @@ public class YamlReader {
             talk.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TALKS_PATH + "/" + date.getYear() + "/" + name + ".html");
 
             return Optional.ofNullable(talk);
-        } catch (Exception e) {
-            log.error("unable to read {}", name, e);
+        } catch (IOException | URISyntaxException e) {
+            log.error("unable to read {}", ressourcePath, e);
             return Optional.empty();
         }
     }
 
     public Optional<TeamMember> readTeamMember(String name) {
+        String ressourcePath = YAML_TEAM_PATH + "/" + name + ".yaml";
+
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource(YAML_TEAM_PATH + "/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(ressourcePath);
             if (resource == null) {
-                log.warn("unable to read {}", name);
+                log.warn("unable to read {}", ressourcePath);
                 return Optional.empty();
             }
             Path path = Paths.get(resource.toURI());
@@ -158,19 +164,20 @@ public class YamlReader {
             team.setInternalUrl((StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
             team.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_TEAM_PATH + "/" + name + ".html");
 
-
             return Optional.ofNullable(team);
-        } catch (Exception e) {
-            log.error("unable to read {}", name, e);
+        } catch (IOException | URISyntaxException e) {
+            log.error("unable to read {}", ressourcePath, e);
             return Optional.empty();
         }
     }
 
     public Optional<Sponsor> readSponsor(String name) {
+        String ressourcePath = YAML_SPONSORS_PATH + "/" + name + ".yaml";
+
         try {
-            URL resource = YamlReader.class.getClassLoader().getResource(YAML_SPONSORS_PATH + "/" + name + ".yaml");
+            URL resource = YamlReader.class.getClassLoader().getResource(ressourcePath);
             if (resource == null) {
-                log.warn("unable to read {}", name);
+                log.warn("unable to read {}", ressourcePath);
                 return Optional.empty();
             }
             Path path = Paths.get(resource.toURI());
@@ -180,8 +187,8 @@ public class YamlReader {
             sponsor.setExternalUrl(URL_EXTERNAL + (StringUtils.isEmpty(APPLICATION_CONTEXT) ? "" : APPLICATION_CONTEXT) + "/" + MD_SPONSORS_PATH + "/" + name + ".html");
 
             return Optional.ofNullable(sponsor);
-        } catch (Exception e) {
-            log.error("unable to read {}", name, e);
+        } catch (IOException | URISyntaxException e) {
+            log.error("unable to read {}", ressourcePath, e);
             return Optional.empty();
         }
     }
