@@ -1,0 +1,9 @@
+title: JBoss AS 5
+date: 2008/12/02
+startTime: 19h30
+endTime: 20h30
+description: |
+    <p><span>Sacha pr&eacute;sentera les nouveaut&eacute;s de la version 5.0 de JBoss AS, notamment le nouveau micro-container et certains de ses sous-syst&egrave;mes, les nouvelles fonctionnalit&eacute;s de JBoss Messaging, la pluggabilit&eacute; des services web, et les nouvelles fonctionnalit&eacute;s de gestion du serveur au travers de JOPR. Il pr&eacute;sentera &eacute;galement comment le serveur peut ais&eacute;ment &ecirc;tre augment&eacute; par de nouveaux mod&egrave;les de programmation.</span></p>
+speakers:
+  - sacha-labourey
+

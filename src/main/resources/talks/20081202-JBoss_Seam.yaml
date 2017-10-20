@@ -1,0 +1,10 @@
+title: JBoss Seam
+date: 2008/12/02
+startTime: 21h00
+endTime: 22h00
+description: |
+    <p><span class="wikiexternallink"><a href="http://www.jboss.com/products/seam">JBoss Seam</a></span>&nbsp;est un framework qui permet de d&eacute;velopper des applications de la nouvelle g&eacute;n&eacute;ration Web 2.0 en unifiant et int&eacute;grant des technologies populaires SOA (Architecture Orient&eacute;e vers les Services), Asynchronous JavaScript and XML (AJAX), Java Server Faces (JSF), Enterprise Java Beans (EJB3), ou Business Process Management (BPM).</p>
+    <p>Dans cette pr&eacute;sentation, nous verrons les fonctionnalit&eacute;s et les composants offerts par SEAM ainsi que le d&eacute;veloppement d'une application SEAM avec JBoss Developper Studio.</p>
+speakers:
+  - malik-saheb
+

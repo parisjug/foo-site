@@ -1,0 +1,18 @@
+title: Démonstration de l'API Restlet portée sur GWT - Restlet-GWT
+date: 2008/11/08
+startTime: 21h00
+endTime: 22h00
+description: |
+    <p>Restlet est un framework REST pour Java qui a comme particularit&eacute; une API unifi&eacute;e, capable de supporter &agrave; la fois des applications clientes et serveurs. Les applications Restlet peuvent &ecirc;tre d&eacute;j&agrave; d&eacute;ploy&eacute;es de multiples fa&ccedil;ons: en standalone Java, dans un conteneur de Servlet, dans un noyau OSGi ou encore dans un conteneur Spring. Serait-il possible de rajouter la fl&egrave;che GWT &agrave; cet arc?</p>
+    <p>Dans cette pr&eacute;sentation, nous expliquerons comment, gr&acirc;ce aux nouveaut&eacute;s apport&eacute;es par la version 1.5 de GWT, l'&eacute;quipe Restlet a r&eacute;ussi &agrave; porter son API de Java &agrave; GWT et ainsi offrir une alternative RESTful au protocole GWT-RPC propos&eacute; par d&eacute;faut. Ce retour d'exp&eacute;rience vous aidera &agrave; &eacute;viter les diff&eacute;rents pi&egrave;ges que l'on peut rencontrer lors d'un tel portage et &agrave; comprendre l'int&eacute;r&ecirc;t d'appliquer REST aux architectures GWT.</p>
+keywords :
+    - GWT
+    - Restlet
+    - REST
+    - Java
+    - Javascript
+    - HTTP
+    
+speakers:
+  - jerome-Louvel
+

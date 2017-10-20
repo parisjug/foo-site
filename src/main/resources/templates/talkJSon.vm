@@ -1,0 +1,45 @@
+{
+    "title": {
+        "media": {
+          "url": "/images/timeline-start.jpg",
+          "caption": "Avec le soutiens de nos sponsors",
+          "credit": ""
+        },
+        "text": {
+          "headline": "BJPC <br/> fournisseur de soirée depuis 2013 ",
+          "text": "<p>Voici la liste des soirées ParisJUG</p>"
+        }
+    },
+    "events": [
+<#list events as event>
+      {
+        "media": {
+<#if event.youtubeVideoUrl??>
+          "url": "${event.youtubeVideoUrl}",
+<#else>
+          "url": "",
+</#if>        
+          "caption": "${event.title?html}",
+          "credit": ""
+        },
+        "start_date": {
+          "month": "${event.eventMonth?string["0"]}",
+          "day": "${event.eventDay?string["0"]}",
+          "year": "${event.eventYear?string["0"]}"
+        },
+        "text": {
+          "headline": "${event.title?html}",
+<#if event.description??>
+          "text": "${event.description?json_string?html}"
+<#else>
+          "text": ""
+</#if>          
+        }
+<#if event?has_next>
+      },
+<#else>
+      }
+</#if>          
+</#list>
+      ]
+      }

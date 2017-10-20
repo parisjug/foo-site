@@ -1,0 +1,11 @@
+lastName: Goncalves
+firstName: Antonio
+tweet: agoncal
+url: http://agoncal.wordpress.com/
+description: |
+  Architecte sénior et Java Champion, Antonio Goncalves
+  intervient chez ses clients comme consultant et formateur. Ancien consultant Weblogic chez BEA Systems, il s'est spécialisé depuis 1998 dans l'architecture logicielle et les technologies Java. Antonio est l'auteur du livre Java EE 5 aux éditions Eyrolles et Java EE 6 aux éditions Apress. Il est membre du JCP et intervient sur les JSR 316 (Java EE 6), JSR 317 (JPA 2.0) et JSR 318 (EJB 3.1). Il enseigne également la plate-forme Java EE au Conservatoire National des Arts et Métiers. Il est rédacteur technique pour les sites DevX))) et developpez.com, co-fondateur du Paris Java User Group et co-animateur des Cast Codeurs.
+  Suivez-le sur son blog ou sur Twitter.
+photo: /images/speakers/antonio-goncalves.jpg
+talks:
+  - 20170912-javaEE-1

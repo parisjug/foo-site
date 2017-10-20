@@ -1,0 +1,7 @@
+title: Google Web Toolkit
+date: 2008/11/08
+description: |    
+    <p>Google Web Toolkit est une technologie &eacute;tonnante par son efficacit&eacute;. Elle permet &agrave; des d&eacute;veloppeurs connaissant le langage java de cr&eacute;er des applications internet riche. Dans cet expos&eacute; la technologie sera d&eacute;crite et d&eacute;cortiqu&eacute;e, les nouveaut&eacute;s de la version 1.5 seront pr&eacute;sent&eacute;es et la strat&eacute;gie de Google pour faire du navigateur la plateforme d'ex&eacute;cution du web sera expliqu&eacute;e.</p>
+talks:
+  - 20081108-Restlet-GWT
+  - 20081108-GWT_le_navigateur_est_la_plateforme

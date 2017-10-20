@@ -1,0 +1,9 @@
+lastName: Saheb
+firstName: Malik
+#tweet: none
+#url: http://www.jmdoudoux.fr
+description: |
+  <p><span>Malik Saheb est&nbsp;</span><em>Senior Solutions Architect</em><span>&nbsp;chez&nbsp;</span><span class="wikiexternallink"><a href="http://www.jboss.org/">JBoss</a></span><span>&nbsp;division de&nbsp;</span><span class="wikiexternallink"><a href="http://www.redhat.com/">Redhat</a></span><span>. Malik a d'abord travaill&eacute; &agrave; l'INRIA en tant qu'Ing&eacute;nieur Expert autour des syst&egrave;mes transactionnels distribu&eacute;s, puis a rejoint Hewlett-Packard &agrave; Newcastle. Il a ensuite particip&eacute; &agrave; l'aventure Arjuna Technologies dans le d&eacute;velopement du service de transactions, devenu JBoss Transactions. Avant de rejoindre JBoss, Malik SAHEB a fait un passage chez PrismTechnologies en tant que Consultant Senior. Malik SAHEB a contribu&eacute; au sein de l'OMG pour la sp&eacute;cification des services de transactions (OTS) et Activity (workflow), et a &eacute;t&eacute; membre chez OASIS du comit&eacute; WS-CAF (Web Services Composite Application Framework).</span></p>
+photo: https://parisjug.org/xwiki/wiki/oldversion/download/Speaker/BienAdam/adamBien-h114.jpg
+talks:
+  - 20170912-javaEE-1
