@@ -25,7 +25,14 @@ ${event.description!}
 ### ${talk.startTime!} - ${talk.endTime!} : [${talk.title}](${talk.internalUrl})
 
 ${talk.description}
-
+<#if talk.keywords??>
+<div class="keywords">
+<em>keywords</em> :
+<#list talk.keywords as keyword>
+${keyword} - 
+</#list>
+</div>
+</#if>
 par :
 
 <#list talk.speakersObject as speaker>
